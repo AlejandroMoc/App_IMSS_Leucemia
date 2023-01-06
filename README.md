@@ -19,3 +19,6 @@ O365GRP-Proyecto SS-IMSS
 - [**A01732584**](mailto:A01732584@tec.mx) Ángel Estrada Centeno
 - [**A01736353**](mailto:a01736353@tec.mx) Alejandro Daniel Moctezuma Cruz
 
+## Licencia
+
+Este proyecto cuenta con la licensia __.
