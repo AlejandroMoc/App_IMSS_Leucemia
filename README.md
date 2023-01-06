@@ -3,6 +3,7 @@ O365GRP-Proyecto SS-IMSS
 
 ## Objetivo
 
+Este proyecto tiene como finalidad el desarrollo de una aplicación la cual ayude a _____.
 
 ## Miembros
 
@@ -10,7 +11,7 @@ O365GRP-Proyecto SS-IMSS
 - [**A01733551**](mailto:A01733551@tec.mx) Lou Parra Camargo
 
 - [**A01552359**](mailto:A01552359@tec.mx) Adrían Moras Acuñas
-- [**a01737453**](mailto:a01737453@tec.mx) Álvaro Alberto Cruz Jiménez
+- [**A01737453**](mailto:a01737453@tec.mx) Álvaro Alberto Cruz Jiménez
 - [**A01736302**](mailto:A01736302@tec.mx) Christian Raúl Jiménez Hernández
 - [**A01662202**](mailto:A01662202@tec.mx) Juan Pedro Medina Silva
 - [**A01736345**](mailto:A01736345@tec.mx) Luis Ángel Cruz García
