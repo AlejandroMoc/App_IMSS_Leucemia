@@ -1,3 +1,6 @@
+
+//archivo home creado en otra sección
+
 import 'package:flutter/material.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:liquid_swipe1/src/widgets/liquid_pages.dart';
