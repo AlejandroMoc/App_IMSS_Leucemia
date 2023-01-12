@@ -1,3 +1,7 @@
+//Es el archivo main de la carpeta Lib en un proyecto de flutter
+
+
+
 import 'package:flutter/material.dart';
 import 'package:liquid_swipe1/src/pages/home.dart';
 
