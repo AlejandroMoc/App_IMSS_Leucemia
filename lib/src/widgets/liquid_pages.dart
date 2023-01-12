@@ -1,3 +1,5 @@
+//archivo adicional creado para colocar los widgets
+
 import 'package:flutter/material.dart';
 
 final texto_estilo = TextStyle(fontSize: 30.0, color: Colors.blue);
