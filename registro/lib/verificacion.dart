@@ -13,6 +13,9 @@ class _VerificacionState extends State<Verificacion> {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: const Color(0xffaea5d1),
       body: Container(
@@ -20,8 +23,8 @@ class _VerificacionState extends State<Verificacion> {
         width: double.infinity,
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Container(
-            height: 150,
-            width: 150,
+            height: height * .18,
+            width: height * .18,
             decoration: const BoxDecoration(
                 color: Colors.white60,
                 borderRadius: BorderRadius.all(Radius.circular(20))),
@@ -33,11 +36,11 @@ class _VerificacionState extends State<Verificacion> {
               ),
             ),
           ),
-          const SizedBox(
-            height: 50,
+          Container(
+            height: height * .03,
           ),
           Container(
-            height: 400,
+            height: height * .55,
             width: double.infinity,
             padding: const EdgeInsets.only(left: 30, right: 30),
             decoration: const BoxDecoration(
@@ -109,8 +112,8 @@ class _VerificacionState extends State<Verificacion> {
                       hintStyle:
                           TextStyle(fontSize: 18, color: Colors.black26)),
                 ),
-                const SizedBox(
-                  height: 20,
+                Container(
+                  height: height * .05,
                 ),
                 Container(
                   decoration: const BoxDecoration(
