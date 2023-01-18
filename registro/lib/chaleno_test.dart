@@ -16,6 +16,7 @@ Future<dynamic> verifyData(cellNumberArg, nameArg, surnameArg) async {
     String? name = fullName?.text;
     name = name?.trimLeft();
 
+    print(name == fullNameForm);
     return name == fullNameForm;
   } else {
     print("Invalid ID");

@@ -93,6 +93,7 @@ class _VerificacionState extends State<Verificacion> {
                   height: 10,
                 ),
                 TextField(
+                  textCapitalization: TextCapitalization.words,
                   onChanged: (value) => name = value,
                   style:
                       const TextStyle(color: Color(0xff343B8f), fontSize: 18),
@@ -105,6 +106,7 @@ class _VerificacionState extends State<Verificacion> {
                   height: 10,
                 ),
                 TextField(
+                  textCapitalization: TextCapitalization.words,
                   onChanged: (value) => secondN = value,
                   style:
                       const TextStyle(color: Color(0xff343B8f), fontSize: 18),
@@ -117,6 +119,7 @@ class _VerificacionState extends State<Verificacion> {
                   height: 10,
                 ),
                 TextField(
+                  textCapitalization: TextCapitalization.words,
                   onChanged: (value) => secondName = value,
                   style:
                       const TextStyle(color: Color(0xff343B8f), fontSize: 18),
