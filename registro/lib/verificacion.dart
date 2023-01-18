@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:verificacion/chaleno_test.dart';
 
 class Verificacion extends StatefulWidget {
   const Verificacion({super.key});
@@ -10,6 +11,11 @@ class Verificacion extends StatefulWidget {
 class _VerificacionState extends State<Verificacion> {
   dynamic iconColor = Colors.black26;
   dynamic iconImage = "assets/Images/ID.svg";
+  var id = "";
+  var name = "";
+  var secondN = "";
+  var secondName = "";
+  var surname = "";
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +30,7 @@ class _VerificacionState extends State<Verificacion> {
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Container(
             height: height * .18,
-            width: height * .18,
+            width: width * .35,
             decoration: const BoxDecoration(
                 color: Colors.white60,
                 borderRadius: BorderRadius.all(Radius.circular(20))),
@@ -66,6 +72,7 @@ class _VerificacionState extends State<Verificacion> {
                 ),
                 TextField(
                   onChanged: (value) {
+                    id = value;
                     setState(() {
                       iconImage = "assets/Images/ID_FOCUS.svg";
                     });
@@ -85,9 +92,11 @@ class _VerificacionState extends State<Verificacion> {
                 const SizedBox(
                   height: 10,
                 ),
-                const TextField(
-                  style: TextStyle(color: Color(0xff343B8f), fontSize: 18),
-                  decoration: InputDecoration(
+                TextField(
+                  onChanged: (value) => name = value,
+                  style:
+                      const TextStyle(color: Color(0xff343B8f), fontSize: 18),
+                  decoration: const InputDecoration(
                       hintText: "Nombre(s)",
                       hintStyle:
                           TextStyle(fontSize: 18, color: Colors.black26)),
@@ -95,9 +104,11 @@ class _VerificacionState extends State<Verificacion> {
                 const SizedBox(
                   height: 10,
                 ),
-                const TextField(
-                  style: TextStyle(color: Color(0xff343B8f), fontSize: 18),
-                  decoration: InputDecoration(
+                TextField(
+                  onChanged: (value) => secondN = value,
+                  style:
+                      const TextStyle(color: Color(0xff343B8f), fontSize: 18),
+                  decoration: const InputDecoration(
                       hintText: "Primer Apellido",
                       hintStyle:
                           TextStyle(fontSize: 18, color: Colors.black26)),
@@ -105,9 +116,11 @@ class _VerificacionState extends State<Verificacion> {
                 const SizedBox(
                   height: 10,
                 ),
-                const TextField(
-                  style: TextStyle(color: Color(0xff343B8f), fontSize: 18),
-                  decoration: InputDecoration(
+                TextField(
+                  onChanged: (value) => secondName = value,
+                  style:
+                      const TextStyle(color: Color(0xff343B8f), fontSize: 18),
+                  decoration: const InputDecoration(
                       hintText: "Segundo Apellido",
                       hintStyle:
                           TextStyle(fontSize: 18, color: Colors.black26)),
@@ -142,7 +155,31 @@ class _VerificacionState extends State<Verificacion> {
       height: 45,
       child: MaterialButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-        onPressed: () {},
+        onPressed: () {
+          surname = "$secondN $secondName";
+          verifyData(id, name, surname).then((value) {
+            if (value == true) {
+              // Navigator.push(
+              //     context,
+              //     MaterialPageRoute(
+              //         builder: (context) => const SiguientePagina()));
+            } else {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const Verificacion()));
+            }
+          });
+          // print(verifyData(id, name, surname));
+          // if (verifyData(id, name, surname) == 0) {
+          //   Navigator.push(context,
+          //       MaterialPageRoute(builder: (context) => const Verificacion()));
+          // }
+          // else {
+          //   Navigator.push(context,
+          //       MaterialPageRoute(builder: (context) => const Verificacion()));
+          // }
+        },
         color: const Color(0xff9d91cc),
         child: const Text(
           "Siguiente",
