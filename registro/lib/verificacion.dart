@@ -170,15 +170,6 @@ class _VerificacionState extends State<Verificacion> {
                       builder: (context) => const Verificacion()));
             }
           });
-          // print(verifyData(id, name, surname));
-          // if (verifyData(id, name, surname) == 0) {
-          //   Navigator.push(context,
-          //       MaterialPageRoute(builder: (context) => const Verificacion()));
-          // }
-          // else {
-          //   Navigator.push(context,
-          //       MaterialPageRoute(builder: (context) => const Verificacion()));
-          // }
         },
         color: const Color(0xff9d91cc),
         child: const Text(
