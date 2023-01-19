@@ -24,9 +24,8 @@ class _VerificacionState extends State<Verificacion> {
 
     return Scaffold(
       backgroundColor: const Color(0xffaea5d1),
-      body: Container(
-        padding: const EdgeInsets.fromLTRB(35, 0, 35, 0),
-        width: double.infinity,
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.fromLTRB(35, 80, 35, 80),
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Container(
             height: height * .18,
