@@ -28,4 +28,4 @@ La aplicación actualmente desarrollada debe contener información lo más actua
 
 ## Licencia
 
-Este proyecto cuenta con la licensia __.
+Este proyecto cuenta con la licencia __.
