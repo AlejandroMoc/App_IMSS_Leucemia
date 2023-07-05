@@ -1,5 +1,8 @@
-# Servicio Social IMSS
+# Aplicación PRONAII 
 O365GRP-Proyecto SS-IMSS
+
+Aplicación para la identificación y tratamiento de niños con leucemia.
+
 
 ## Objetivo
 
@@ -28,4 +31,4 @@ La aplicación actualmente desarrollada debe contener información lo más actua
 
 ## Licencia
 
-Este proyecto cuenta con la licencia __.
+Este proyecto cuenta con la licencia __, la cual consiste en ___.
