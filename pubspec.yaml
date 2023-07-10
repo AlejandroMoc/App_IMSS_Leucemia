@@ -52,6 +52,12 @@ flutter:
 
   assets:
     - assets/
+    - assets/riv/
+    - assets/riv/animated_bg.riv
+    - assets/riv/circulo_amarillo.riv
+    - assets/riv/triangulo_morado.riv
+    - assets/svg/
+    - assets/svg/Home.svg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   #   - /riv/animated_bg.riv

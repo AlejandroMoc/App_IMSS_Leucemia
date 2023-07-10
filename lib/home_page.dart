@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
           children: <Widget>[
 
             //Fondo con animacion
-            const rive.RiveAnimation.asset('/riv/animated_bg.riv', fit: BoxFit.cover),
+            const rive.RiveAnimation.asset('assets/riv/animated_bg.riv', fit: BoxFit.cover),
 
             //Glasmorphism con glass_kit
             // Se requiere de un borderColor, si no se rompe (es bug de la librería)
@@ -82,14 +82,14 @@ class _HomeState extends State<Home> {
                             //Circulo amarillo
                             Positioned(
                               top: height*.06,
-                              left: width*.22,
+                              left: width*.18,
                               child: Container(
                                 color: Colors.transparent,
                                 // alignment: Alignment.bottomLeft,
                                 height: height * .07,
                                 width: width * .3,
                                 child: const rive.RiveAnimation.asset(
-                                  '/riv/circulo_amarillo.riv',
+                                  'assets/riv/circulo_amarillo.riv',
                                   // alignment: Alignment.bottomLeft,
                                   fit: BoxFit.contain,
                                 ),
@@ -99,14 +99,14 @@ class _HomeState extends State<Home> {
                             //Triangulo morado
                             Positioned(
                               top: height*.01,
-                              right: width*.23,
+                              right: width*.19,
                               child: Container(
                                 color: Colors.transparent,
                                 // alignment: Alignment.bottomLeft,
                                 height: height * .07,
                                 width: width * .3,
                                 child: const rive.RiveAnimation.asset(
-                                  '/riv/triangulo_morado.riv',
+                                  'assets/riv/triangulo_morado.riv',
                                   // alignment: Alignment.bottomLeft,
                                   fit: BoxFit.contain,
                                 ),
@@ -122,7 +122,7 @@ class _HomeState extends State<Home> {
                             //     // radius: 16,
                             //     // backgroundColor: Colors.transparent,
                             //     // foregroundColor: Colors.transparent,
-                            //     child: rive.RiveAnimation.asset('/riv/circulo_amarillo.riv'),
+                            //     child: rive.RiveAnimation.asset('assets/riv/circulo_amarillo.riv'),
                             //   ), //CircularAvatar
                             // ),
 
