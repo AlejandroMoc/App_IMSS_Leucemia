@@ -1,5 +1,5 @@
 # Pantalla de evaluación o capacitación
-## seleccion_actividad(?)
+## seleccion_actividad
 ## co_006b(?)
 
 A new Flutter project.
