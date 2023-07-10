@@ -1,5 +1,6 @@
-# Pantalla de subtemas
-# co_004b
+# Pantalla de evaluación o capacitación
+## seleccion_actividad(?)
+## co_006b(?)
 
 A new Flutter project.
 

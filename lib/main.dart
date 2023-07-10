@@ -1,6 +1,6 @@
-//CO_003B
+//CO_006B(?)
 //A01736353 Alejandro Daniel Moctezuma Cruz
-//Lunes 16 de abril de 2023
+//Lunes 10 de julio de 2023
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'CO-004B',
+      title: 'seleccion_actividad',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: GoogleFonts.nunitoTextTheme(),

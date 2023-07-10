@@ -1,4 +1,4 @@
-package com.example.co_004b
+package com.example.seleccion_actividad
 
 import io.flutter.embedding.android.FlutterActivity
 
