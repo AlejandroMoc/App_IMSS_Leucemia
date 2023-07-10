@@ -33,7 +33,7 @@ class homebutton extends StatelessWidget {
             // ),
 
             //Utilizar Home.svg
-            child: SvgPicture.asset("svg/Home.svg"),
+            child: SvgPicture.asset("assets/svg/Home.svg"),
 
           ),
         ),
