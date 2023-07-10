@@ -221,7 +221,7 @@ class _HomeState extends State<Home> {
 
                       //Separador
                       SizedBox(
-                        height: height * .03,
+                        height: height * .02,
                       ),
                       
                       const SafeArea(
