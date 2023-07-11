@@ -36,7 +36,6 @@ class _HomeState extends State<Home> {
 
         decoration: const BoxDecoration(
           //color: Colors.green,
-          color: Colors.white
           // image: DecorationImage(
           //   image: AssetImage("/images/Fondo.png"),
           //   fit: BoxFit.cover,
@@ -51,17 +50,17 @@ class _HomeState extends State<Home> {
             // const rive.RiveAnimation.asset('assets/riv/animated_bg.riv', fit: BoxFit.cover),
 
             //Glasmorphism con glass_kit
-            // GlassContainer.frostedGlass(
-            //   height: height,
-            //   width: width,
-            //   borderColor: Colors.transparent,
-            //   borderWidth: 0,
-            //   blur: 15,
-            //   // elevation: 3.0,
-            //   // isFrostedGlass: false,
-            //   // shadowColor: Colors.black.withOpacity(0.20),
-            //   // frostedOpacity: 0.82,
-            // ),
+            GlassContainer.frostedGlass(
+              height: height,
+              width: width,
+              borderColor: Colors.transparent,
+              borderWidth: 0,
+              blur: 15,
+              // elevation: 3.0,
+              // isFrostedGlass: false,
+              // shadowColor: Colors.black.withOpacity(0.20),
+              // frostedOpacity: 0.82,
+            ),
 
             //SingleChildScrollView
             SingleChildScrollView(
@@ -72,7 +71,7 @@ class _HomeState extends State<Home> {
                   Align(
                     alignment: Alignment.center,
                     child: Container(
-                      //color:Colors.blue,
+                      color:Colors.blue,
                       child: Column(
                         children: [
 
@@ -88,9 +87,9 @@ class _HomeState extends State<Home> {
                                   //Título de unidad
                                   Container(
                                     width: width,
-                                    //color: Colors.yellow,
+                                    color: Colors.yellow,
                                     child: Container(
-                                      //color: Colors.red,
+                                      color: Colors.red,
                                       child: banner(
                                         text: intertitle,
                                         width: width,
@@ -110,7 +109,7 @@ class _HomeState extends State<Home> {
                                 top: height*.07,
                                 right: width*0.1,
                                 child: Container(
-                                  //color: Colors.green,
+                                  color: Colors.green,
                                   // alignment: Alignment.bottomLeft,
                                   height: height * .07,
                                   width: width * .15,
@@ -127,7 +126,7 @@ class _HomeState extends State<Home> {
                                 top: height*.195,
                                 left: width*.04,
                                 child: Container(
-                                  //color: Colors.purple,
+                                  color: Colors.purple,
                                   // alignment: Alignment.bottomLeft,
                                   height: height * .08,
                                   width: width * .15,
@@ -144,7 +143,7 @@ class _HomeState extends State<Home> {
                           //Subtema
                           Container(
                             width: width,
-                            //color: Colors.yellow,
+                            color: Colors.yellow,
                             child: Text(
                               intersubtitle,
                               textAlign: TextAlign.center,

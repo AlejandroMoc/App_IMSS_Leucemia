@@ -1,4 +1,4 @@
-name: co_004b
+name: lista_preguntas
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -91,3 +91,5 @@ flutter:
   # Este documento de dependencias abarca los siguientes trabajos:
   # co_003b
   # co_004b
+  # seleccion_actividad
+  # lista_preguntas

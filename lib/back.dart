@@ -25,7 +25,7 @@ class back extends StatelessWidget {
                 Icons.arrow_back_sharp,
                 size: 50, 
                 color: Color.fromARGB(255, 121, 124, 147)
-            )
+              )
         )
       ),
     );
