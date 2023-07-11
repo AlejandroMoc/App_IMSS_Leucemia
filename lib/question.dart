@@ -35,7 +35,7 @@ class question extends StatelessWidget {
 
     return Container(
         width: width * 0.8,
-        height: height * 0.15,
+        height: height * 0.138,
         decoration: BoxDecoration(
           boxShadow: const [
             BoxShadow(
