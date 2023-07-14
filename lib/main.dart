@@ -1,6 +1,7 @@
+//seleccion_actividad
 //CO_006B(?)
 //A01736353 Alejandro Daniel Moctezuma Cruz
-//Lunes 10 de julio de 2023
+//Viernes 14 de julio de 2023
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

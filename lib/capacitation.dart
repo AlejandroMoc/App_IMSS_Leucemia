@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:rive/rive.dart' as rive;
 
 class capacitation extends StatelessWidget {
-  // final String direction;
   final String text;
   final String icon;
   final double width;
@@ -21,7 +19,7 @@ class capacitation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
     width: width * 0.8,
-    height: height * 0.25,
+    height: height * 0.27,
     decoration: const BoxDecoration(
       boxShadow: [
         BoxShadow(
@@ -43,35 +41,34 @@ class capacitation extends StatelessWidget {
         child: Align(
           alignment: Alignment.center,
 
-
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    text,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.w100,
-                        fontSize: 30,
-                        color: Color.fromARGB(255, 121, 124, 147)
-                    ),
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  text,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w100,
+                      fontSize: 32,
+                      color: Color.fromARGB(255, 121, 124, 147)
                   ),
-                  SizedBox(
-                    width: width * 0.1,
-                  ),
-                  Container(
-                    color: Colors.transparent,
+                ),
+                SizedBox(
+                  width: width * 0.1,
+                ),
+                Container(
+                  color: Colors.transparent,
+                  // alignment: Alignment.bottomLeft,
+                  height: height * .12,
+                  width: width * .17,
+                  child: SvgPicture.asset(icon,
                     // alignment: Alignment.bottomLeft,
-                    height: height * .12,
-                    width: width * .17,
-                    child: SvgPicture.asset(icon,
-                      // alignment: Alignment.bottomLeft,
-                      fit: BoxFit.contain,
-                    ),
+                    fit: BoxFit.contain,
                   ),
-                ],
-            ),
+                ),
+              ],
+          ),
 
         )
       )

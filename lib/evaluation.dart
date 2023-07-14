@@ -21,7 +21,7 @@ class evaluation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
     width: width * 0.8,
-    height: height * 0.25,
+    height: height * 0.27,
     decoration: const BoxDecoration(
       boxShadow: [
         BoxShadow(
@@ -42,7 +42,6 @@ class evaluation extends StatelessWidget {
         onPressed: (() {}),
         child: Align(
           alignment: Alignment.center,
-
 
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -66,7 +65,7 @@ class evaluation extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: const TextStyle(
                         fontWeight: FontWeight.w100,
-                        fontSize: 30,
+                        fontSize: 32,
                         color: Color.fromARGB(255, 121, 124, 147)
                     ),
                   ),

@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
 
-    double heightfactor = 0.11;
+    double heightfactor = 0.13;
 
     return Scaffold(
 
@@ -86,12 +86,12 @@ class _HomeState extends State<Home> {
 
                       //Linea separadora
                       Container(
-                      width: width * 0.8,
-                      height: height * 0.01,
-                      decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      ),
+                        width: width * 0.8,
+                        height: height * 0.01,
+                        decoration: const BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(Radius.circular(15)),
+                        ),
                       ),
 
                       SizedBox(
@@ -119,7 +119,7 @@ class _HomeState extends State<Home> {
                     child: Container(
                       color: Colors.transparent,
                       // alignment: Alignment.bottomLeft,
-                      height: height * 1,
+                      height: height * 1.05,
                       width: width * .27,
                       child: const rive.RiveAnimation.asset(
                         'assets/riv/circulo_amarillo.riv',
@@ -128,19 +128,17 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-
                   //Triangulo morado
                   Positioned(
-                    top: height*.12,
+                    top: height*.08,
                     right: width*-.03,
-
                     child: Transform.rotate(
                       angle: -math.pi / 2.8,
                       child: Container(
                         color: Colors.transparent,
                         // alignment: Alignment.bottomLeft,
-                        height: height * .12,
-                        width: width * .3,
+                        height: height * .13,
+                        width: width * .32,
                         child: const rive.RiveAnimation.asset(
                           'assets/riv/triangulo_morado.riv',
                           // alignment: Alignment.bottomLeft,
@@ -151,30 +149,30 @@ class _HomeState extends State<Home> {
 
                   ),
 
-                  //back
+                  //Boton regresar
                   Column(
                     children: [
-
-                      //Separador
-                      SizedBox(
-                        height: height * .02,
-                      ),
-
+                      SizedBox(height: height * .008),
                       const SafeArea(
-                        child:back(x: -0.95, y: 0)
+                          child:back(x: -0.95, y: 0)
                       ),
                     ],
                   ),
+
                 ],
               ),
 
-            //Boton de regreso a casa
+            //Boton casa
             Positioned(
-              left: width * 0.8,
-              top: width * 1.8,
-              child: const Align(
+              left: width * 0.7,
+              top: width * 1.76,
+              child: Align(
                 alignment: Alignment.bottomRight,
-                child: homebutton(text: "Pagina de inicio"),
+                child: homebutton(
+                  text: "Página de inicio",
+                  height: height,
+                  width: width,
+                ),
               ),
             ),
 
