@@ -138,7 +138,7 @@ class _HomeState extends State<Home> {
 
                       //Generar subtemas
                       SizedBox(
-                        height: height*0.9,
+                        height: height*0.97,
                         child: ListView.builder(
                           physics: const NeverScrollableScrollPhysics(),
                           padding: EdgeInsets.fromLTRB(0, height*0.03, 0, height*0.09),
