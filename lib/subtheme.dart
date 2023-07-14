@@ -19,7 +19,7 @@ class subtheme extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
     width: width * 0.8,
-    height: height * 0.138,
+    height: height * 0.15,
     decoration: const BoxDecoration(
       boxShadow: [
         BoxShadow(
@@ -34,7 +34,7 @@ class subtheme extends StatelessWidget {
         ),
       ],
       color: Colors.white,
-      borderRadius: BorderRadius.all(Radius.circular(15)),
+      borderRadius: BorderRadius.all(Radius.circular(20)),
       ),
       child: MaterialButton(
         onPressed: (() {}),
@@ -47,7 +47,7 @@ class subtheme extends StatelessWidget {
               textAlign: TextAlign.center,
               style: const TextStyle(
                 fontWeight: FontWeight.w100,
-                fontSize: 20,
+                fontSize: 24,
                 color: Color.fromARGB(255, 121, 124, 147)
               ),
             ),

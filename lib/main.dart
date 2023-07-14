@@ -1,17 +1,24 @@
 //CO_004B
 //A01736353 Alejandro Daniel Moctezuma Cruz
-//Lunes 10 de julio de 2023
+//Viernes 14 de julio de 2023
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'home_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MyApp(
+      //Cantidad de subtemas a imprimir (5)
+      items: List<String>.generate(5, (i) => 'Subtema ${i + 1}'),
+    )
+  );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final List<String> items;
+  const MyApp({super.key, required this.items});
+
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +30,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: "home",
       routes: {
-        "home": (_) => Home(),
+        "home": (_) => Home(items: items, key: key),
       }
     );
   }

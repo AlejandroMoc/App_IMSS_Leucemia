@@ -9,18 +9,24 @@ import 'subtheme.dart';
 import 'homebutton.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+  const Home({super.key, required this.items});
+
+  final List<String> items;
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Home> createState() => _HomeState(items);
 }
 
 class _HomeState extends State<Home> {
+
+  final List<String> items;
+  _HomeState(this.items);
 
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
+    String screentitle = "Subtemas";
     return Scaffold(
 
       body: Container(
@@ -52,8 +58,7 @@ class _HomeState extends State<Home> {
               // shadowColor: Colors.black.withOpacity(0.20),
               // frostedOpacity: 0.82,
             ),
-              
-            //SingleChildScrollView
+
             SingleChildScrollView(
               
               child: Stack(
@@ -64,46 +69,46 @@ class _HomeState extends State<Home> {
                     children: [
                       //Separador superior
                       SizedBox(
-                        height: height * .03,
+                        height: height * .05,
                       ),
-
-                      //Subtemas, circulo y triangulo
+                      //Banner superior
                       SizedBox(
                         height: height * .14,
                         width: width * 1,
                         child: Stack(
                           alignment: Alignment.center, 
                           children:[
-
+                            //Titulo
                             Positioned(
-                              top: height*.01,
-                              // left: 0,
-                              child: banner(
-                                text: "Subtemas",
-                                width: width,
-                                height: height,
+                              child: Container(
+                                child: Text(
+                                    screentitle,
+                                    style: const TextStyle(
+                                      shadows: <Shadow>[
+                                        Shadow(
+                                          offset: Offset(0,6),
+                                          blurRadius: 3.0,
+                                          color: Color.fromRGBO(0, 0, 0, 0.21),
+                                        ),
+                                      //box-shadow: 0px 6px 4px 0px rgba(0, 0, 0, 0.21);
+                                      ],
+                                      fontWeight: FontWeight.w900,
+                                      fontSize: 40,
+                                      color: Color.fromRGBO(64, 64, 66, 1),
+                                    ),
+                                ),
                               ),
-                              //child: const Text(
-                                //"Subtemas",
-                                //textAlign: TextAlign.center,
-                                //style: TextStyle(
-                                    //fontWeight: FontWeight.w100,
-                                    //fontSize: 20,
-                                    //color: Color.fromARGB(255, 121, 124, 147)
-                                //),
-                              //),
                             ),
-
 
                             //Circulo amarillo
                             Positioned(
-                              top: height*.08,
-                              left: width*.08,
+                              top: height*.06,
+                              left: width*.1,
                               child: Container(
-                                color: Colors.transparent,
+                                //color: Colors.transparent,
                                 // alignment: Alignment.bottomLeft,
-                                height: height * .07,
-                                width: width * .3,
+                                height: height * .09,
+                                width: width * .2,
                                 child: const rive.RiveAnimation.asset(
                                   'assets/riv/circulo_amarillo.riv',
                                   // alignment: Alignment.bottomLeft,
@@ -111,15 +116,14 @@ class _HomeState extends State<Home> {
                                 ),
                               ),
                             ),
-
                             //Triangulo morado
                             Positioned(
-                              top: height*.01,
+                              top: 0,
                               right: width*.09,
                               child: Container(
-                                color: Colors.transparent,
+                                //color: Colors.transparent,
                                 // alignment: Alignment.bottomLeft,
-                                height: height * .07,
+                                height: height * .08,
                                 width: width * .3,
                                 child: const rive.RiveAnimation.asset(
                                   'assets/riv/triangulo_morado.riv',
@@ -128,106 +132,73 @@ class _HomeState extends State<Home> {
                                 ),
                               ),
                             ),
-
-
-                            //ESTE SIRVE PERO USA CIRCLEAVATAR
-                            // const Positioned(
-                            //   top: 0,
-                            //   right: 285,
-                            //   child: CircleAvatar(
-                            //     // radius: 16,
-                            //     // backgroundColor: Colors.transparent,
-                            //     // foregroundColor: Colors.transparent,
-                            //     child: rive.RiveAnimation.asset('assets/riv/circulo_amarillo.riv'),
-                            //   ), //CircularAvatar
-                            // ),
-
-
                           ],
                         ),
                       ),
 
-                      //Separador
+                      //Generar subtemas
                       SizedBox(
-                        height: height * .02,
-                      ),
-
-                      Row(children: <Widget>[
-
-                        SizedBox(
-                          width: width * 0.1,
+                        height: height*0.9,
+                        child: ListView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          padding: EdgeInsets.fromLTRB(0, height*0.03, 0, height*0.09),
+                          itemCount: items.length,
+                          prototypeItem:
+                            ListTile(
+                              onTap: (){},
+                              contentPadding: EdgeInsets.fromLTRB(0,height*0.03,0,height*0.09),
+                              title: Text(items.first),
+                            ),
+                            itemBuilder: (context, index) {
+                              return
+                              Column(
+                                children: [
+                                  subtheme(
+                                    width: width,
+                                    height: height,
+                                    text: (items[index]),
+                                  ),
+                                ],
+                              );
+                            },
                         ),
-      
-                      ]),
-
-                      //Subtemas
-                      subtheme(
-                        width: width,
-                        height: height,
-                        text: "Subtema 1",
-                      ),
-                      
-                      SizedBox(
-                        height: height * 0.04,
                       ),
 
-                      subtheme(
-                        width: width,
-                        height: height,
-                        text: "Subtema 2",
-                      ),
+                      // ANTIGUA FORMA DE IMPRIMIR LOS ELEMENTOS
+                      // subtheme(
+                      //   width: width,
+                      //   height: height,
+                      //   text: "Subtema 1",
+                      // ),
+                      //
+                      // SizedBox(height: height * 0.04,),
+                      //
+                      // subtheme(
+                      //   width: width,
+                      //   height: height,
+                      //   text: "Subtema 2",
+                      // ),
+                      //
+                      // SizedBox(height: height * 0.04,),
+                      //
+                      // subtheme(
+                      //   width: width,
+                      //   height: height,
+                      //   text: "Subtema 3",
+                      // ),
 
-                      SizedBox(
-                        height: height * 0.04,
-                      ),
-
-                      subtheme(
-                        width: width,
-                        height: height,
-                        text: "Subtema 3",
-                      ),
-
-                      SizedBox(
-                        height: height * 0.04,
-                      ),
-
-                      subtheme(
-                        width: width,
-                        height: height,
-                        text: "Subtema 4",
-                      ),
-
-                      SizedBox(
-                        height: height * 0.04,
-                      ),
-
-                      subtheme(
-                        width: width,
-                        height: height,
-                        text: "Subtema 5",
-                      ),
-
-                      //Separador
-                      SizedBox(
-                        height: height * .08,
-                      ),
+                      //Separador inferior
+                      SizedBox(height: height * .03),
                     ],
-
                   ),
 
-                  //back
+                  //Boton regresar
                   Column(
                     children: [
-
-                      //Separador
-                      SizedBox(
-                        height: height * .02,
-                      ),
-                      
+                      SizedBox(height: height * .008),
                       const SafeArea(
                         child:back(x: -0.95, y: 0)
                       ),
-
                     ],
                   ),
 
@@ -235,13 +206,17 @@ class _HomeState extends State<Home> {
               ),
             ),
 
-            //Boton de regreso a casa            
+            //Boton casa
             Positioned(
-              left: width * 0.8,
-              top: width * 1.8,
-              child: const Align(
+              left: width * 0.7,
+              top: width * 1.76,
+              child: Align(
                 alignment: Alignment.bottomRight,
-                child: homebutton(text: "Pagina de inicio"),
+                child: homebutton(
+                  text: "Página de inicio",
+                  height: height,
+                  width: width,
+                ),
               ),
             ),
 

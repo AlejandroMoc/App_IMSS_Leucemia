@@ -23,7 +23,7 @@ class back extends StatelessWidget {
               onPressed: () {},
               child: const Icon(
                 Icons.arrow_back_sharp,
-                size: 50, 
+                size: 55,
                 color: Color.fromARGB(255, 121, 124, 147)
             )
         )
