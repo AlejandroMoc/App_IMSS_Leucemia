@@ -22,11 +22,11 @@ class back extends StatelessWidget {
               padding: const EdgeInsets.all(2),
               onPressed: () {},
               child: const Icon(
-                Icons.arrow_back_sharp,
-                size: 50, 
-                color: Color.fromARGB(255, 121, 124, 147)
+                  Icons.arrow_back_sharp,
+                  size: 55,
+                  color: Color.fromARGB(255, 121, 124, 147)
               )
-        )
+          )
       ),
     );
   }

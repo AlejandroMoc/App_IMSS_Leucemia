@@ -35,7 +35,7 @@ class question extends StatelessWidget {
 
     return Container(
         width: width * 0.8,
-        height: height * 0.138,
+        height: height * 0.15,
         decoration: BoxDecoration(
           boxShadow: const [
             BoxShadow(
@@ -60,7 +60,6 @@ class question extends StatelessWidget {
             onPressed: (() {}),
             child: Align(
               alignment: Alignment.center,
-
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -82,11 +81,9 @@ class question extends StatelessWidget {
                     // alignment: Alignment.bottomLeft,
                     //height: height * .12,
                     width: width * .23,
-
                     //Imprimir el ícono correspondiente
                     //child: SvgPicture.asset("assets/svg/State0.svg", fit: BoxFit.contain),
                     child: getLockStatus(),
-
                   ),
                 ],
               ),
