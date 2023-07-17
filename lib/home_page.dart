@@ -4,7 +4,7 @@ import 'package:rive/rive.dart' as rive;
 import 'package:glass_kit/glass_kit.dart';
 
 import 'back.dart';
-import 'banner.dart';
+import 'main.dart';
 import 'question.dart';
 import 'score.dart';
 import 'homebutton.dart';
@@ -12,7 +12,7 @@ import 'homebutton.dart';
 class Home extends StatefulWidget {
   const Home({super.key, required this.items});
 
-  final List<String> items;
+  final List<Todo> items;
 
   @override
   State<Home> createState() => _HomeState(items);
@@ -20,7 +20,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  final List<String> items;
+  final List<Todo> items;
   _HomeState(this.items);
 
   @override
@@ -30,228 +30,10 @@ class _HomeState extends State<Home> {
 
     double heightfactor = 0.04;
 
-    String intertitle = "Unidad 1: Lorem Ipsum";
-    String intersubtitle = "Subtema 1";
+    //String titleunit = "Unidad 1: Lorem Ipsum";
+    String titlesubtheme = "Subtema 1";
     int answered = 2;
     int to_answer = 4;
-
-    //Scaffold old
-    // return Scaffold(
-    //
-    //   body: Container(
-    //
-    //     decoration: const BoxDecoration(
-    //       //color: Colors.green,
-    //       color: Colors.white
-    //       // image: DecorationImage(
-    //       //   image: AssetImage("/images/Fondo.png"),
-    //       //   fit: BoxFit.cover,
-    //       // ),
-    //     ),
-    //
-    //     //Hacer stack entre fondo y scrollview
-    //     child:Stack(
-    //       children: [
-    //
-    //         //Fondo con animacion
-    //         // const rive.RiveAnimation.asset('assets/riv/animated_bg.riv', fit: BoxFit.cover),
-    //
-    //         //Glasmorphism con glass_kit
-    //         // GlassContainer.frostedGlass(
-    //         //   height: height,
-    //         //   width: width,
-    //         //   borderColor: Colors.transparent,
-    //         //   borderWidth: 0,
-    //         //   blur: 15,
-    //         //   // elevation: 3.0,
-    //         //   // isFrostedGlass: false,
-    //         //   // shadowColor: Colors.black.withOpacity(0.20),
-    //         //   // frostedOpacity: 0.82,
-    //         // ),
-    //
-    //         SingleChildScrollView(
-    //           child: Stack(
-    //             children: [
-    //               Column(
-    //                 children: [
-    //
-    //                   Stack(
-    //                     alignment: Alignment.center,
-    //                     children: [
-    //                       Column(
-    //                         children: [
-    //                           SizedBox(
-    //                             height: height * heightfactor * 2.8,
-    //                           ),
-    //
-    //                           //Título de unidad
-    //                           Container(
-    //                             width: width,
-    //                             //color: Colors.yellow,
-    //                             child: Container(
-    //                               //color: Colors.red,
-    //                               child: banner(
-    //                                 text: intertitle,
-    //                                 width: width,
-    //                                 height: height*1.1,
-    //                               ),
-    //                             ),
-    //                           ),
-    //
-    //                           SizedBox(
-    //                             height: height * heightfactor*.2,
-    //                           ),
-    //                         ],
-    //                       ),
-    //
-    //
-    //                       //Circulo amarillo
-    //                       Positioned(
-    //                         top: height*.195,
-    //                         left: width*.04,
-    //                         child: Container(
-    //                           //color: Colors.purple,
-    //                           // alignment: Alignment.bottomLeft,
-    //                           height: height * .08,
-    //                           width: width * .15,
-    //                           child: const rive.RiveAnimation.asset(
-    //                             'assets/riv/circulo_amarillo.riv',
-    //                             // alignment: Alignment.bottomLeft,
-    //                             fit: BoxFit.contain,
-    //                           ),
-    //                         ),
-    //                       ),
-    //                       //Triangulo morado
-    //                       Positioned(
-    //                         top: height*.07,
-    //                         right: width*0.1,
-    //                         child: Container(
-    //                           //color: Colors.green,
-    //                           // alignment: Alignment.bottomLeft,
-    //                           height: height * .07,
-    //                           width: width * .15,
-    //                           child: const rive.RiveAnimation.asset(
-    //                             'assets/riv/triangulo_morado.riv',
-    //                             // alignment: Alignment.bottomLeft,
-    //                             fit: BoxFit.contain,
-    //                           ),
-    //                         ),
-    //                       ),
-    //                     ],
-    //                   ),
-    //
-    //                   //Subtema
-    //                   Container(
-    //                     width: width,
-    //                     //color: Colors.yellow,
-    //                     child: Text(
-    //                       intersubtitle,
-    //                       textAlign: TextAlign.center,
-    //                       style: const TextStyle(
-    //                         fontWeight: FontWeight.w100,
-    //                         fontSize: 23,
-    //                         color: Color.fromARGB(255,121, 124, 147),
-    //                       ),
-    //                     ),
-    //                   ),
-    //
-    //                   SizedBox(
-    //                     height: height * heightfactor*.5,
-    //                   ),
-    //
-    //                   //Puntaje
-    //                   score(
-    //                     width: width,
-    //                     height: height,
-    //                     answered: answered,
-    //                     to_answer: to_answer,
-    //                   ),
-    //
-    //                   SizedBox(
-    //                     height: height * heightfactor*.5,
-    //                   ),
-    //
-    //                   //Preguntas
-    //                   question(
-    //                     width: width,
-    //                     height: height,
-    //                     text: "Pregunta 1",
-    //                     state: 2,
-    //                   ),
-    //
-    //                   SizedBox(
-    //                     height: height * heightfactor,
-    //                   ),
-    //
-    //                   question(
-    //                     width: width,
-    //                     height: height,
-    //                     text: "Pregunta 2",
-    //                     state: 0,
-    //                   ),
-    //
-    //                   SizedBox(
-    //                     height: height * heightfactor,
-    //                   ),
-    //
-    //                   question(
-    //                     width: width,
-    //                     height: height,
-    //                     text: "Pregunta 3",
-    //                     state: 1,
-    //                   ),
-    //
-    //                   SizedBox(
-    //                     height: height * heightfactor,
-    //                   ),
-    //
-    //                   question(
-    //                     width: width,
-    //                     height: height,
-    //                     text: "Pregunta 4",
-    //                     state: 2,
-    //                   ),
-    //
-    //                   SizedBox(
-    //                     height: height * heightfactor,
-    //                   ),
-    //
-    //                 ],
-    //
-    //               ),
-    //
-    //               //Boton regresar
-    //               Column(
-    //                 children: [
-    //                   SizedBox(height: height * .008),
-    //                   const SafeArea(
-    //                       child:back(x: -0.95, y: 0)
-    //                   ),
-    //                 ],
-    //               ),
-    //
-    //             ],
-    //           ),
-    //         ),
-    //
-    //         //Boton casa
-    //         Positioned(
-    //           left: width * 0.7,
-    //           top: width * 1.76,
-    //           child: Align(
-    //             alignment: Alignment.bottomRight,
-    //             child: homebutton(
-    //               text: "Página de inicio",
-    //               height: height,
-    //               width: width,
-    //             ),
-    //           ),
-    //         ),
-    //
-    //       ],
-    //     ),
-    //   ),
-    // );
 
     return Scaffold(
       body: Container(
@@ -273,8 +55,8 @@ class _HomeState extends State<Home> {
                       ),
                       //Banner superior
                       Container(
-                        //color: Colors.redAccent,
-                        height: height * (.215),
+                        //color: Colors.red,
+                        //height: height * (.25),
                         width: width * 1,
                         child: Stack(
                           alignment: Alignment.bottomCenter,
@@ -283,36 +65,71 @@ class _HomeState extends State<Home> {
                             Column(
                               children: [
                                 Container(
-                                  //color: Colors.orange,
                                   height: height * 0.05,
                                 ),
-                                Positioned(
-                                  child: Container(
-                                    width: width * .8,
-                                    //color: Colors.pink,
-                                    child: Text(
-                                      textAlign: TextAlign.center,
-                                      intertitle,
-                                      style: const TextStyle(
-                                        shadows: <Shadow>[
-                                          Shadow(
-                                            offset: Offset(0,6),
-                                            blurRadius: 3.0,
-                                            color: Color.fromRGBO(0, 0, 0, 0.21),
-                                          ),
-                                          //box-shadow: 0px 6px 4px 0px rgba(0, 0, 0, 0.21);
-                                        ],
-                                        fontWeight: FontWeight.w900,
-                                        fontSize: 40,
-                                        color: Color.fromRGBO(64, 64, 66, 1),
-                                      ),
+                                Container(
+                                  //color: Colors.blue,
+                                  height: height *.18,
+                                  child: ListView.builder(
+                                    physics: const NeverScrollableScrollPhysics(),
+                                    itemCount: 1,
+                                    prototypeItem:
+                                    ListTile(
+                                      //onTap: (){},
+                                      contentPadding: EdgeInsets.fromLTRB(0,height*0.03,0,height*0.03),
                                     ),
+                                    itemBuilder: (context, index) {
+                                      return
+                                        Container(
+                                          width: width * .8,
+                                          height: height,
+                                          //color: Colors.pink,
+                                          child: Text(
+                                            textAlign: TextAlign.center,
+                                            items[index].titleunit,
+                                            style: const TextStyle(
+                                              shadows: <Shadow>[
+                                                Shadow(
+                                                  offset: Offset(0,6),
+                                                  blurRadius: 3.0,
+                                                  color: Color.fromRGBO(0, 0, 0, 0.21),
+                                                ),
+                                              ],
+                                              fontWeight: FontWeight.w900,
+                                              fontSize: 40,
+                                              color: Color.fromRGBO(64, 64, 66, 1),
+                                            ),
+                                          ),
+                                        );
+                                    },
                                   ),
+
+                                  //CODIGO ANTERIOR PARA IMPRIMIR TITULO DE UNIDAD
+                                  // child: Container(
+                                  //   width: width * .8,
+                                  //   //color: Colors.pink,
+                                  //   child: Text(
+                                  //     textAlign: TextAlign.center,
+                                  //     titleunit,
+                                  //
+                                  //     style: const TextStyle(
+                                  //       shadows: <Shadow>[
+                                  //         Shadow(
+                                  //           offset: Offset(0,6),
+                                  //           blurRadius: 3.0,
+                                  //           color: Color.fromRGBO(0, 0, 0, 0.21),
+                                  //         ),
+                                  //         //box-shadow: 0px 6px 4px 0px rgba(0, 0, 0, 0.21);
+                                  //       ],
+                                  //       fontWeight: FontWeight.w900,
+                                  //       fontSize: 40,
+                                  //       color: Color.fromRGBO(64, 64, 66, 1),
+                                  //     ),
+                                  //   ),
+                                  // ),
+
+
                                 ),
-                                // Container(
-                                //   color: Colors.blue,
-                                //   height: height * 0.02,
-                                // ),
                               ],
                             ),
                             //Circulo amarillo
@@ -354,40 +171,102 @@ class _HomeState extends State<Home> {
                       //   color: Colors.green,
                       //   height: height * 0.02,
                       // ),
-                      //Puntaje
+
+                      //Puntaje 1
                       Container(
-                        width: width,
-                        //color: Colors.yellow,
-                        child: Text(
-                          intersubtitle,
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w100,
-                            fontSize: 23,
-                            color: Color.fromARGB(255,121, 124, 147),
+                        //color: Colors.deepPurple,
+                        height: height*.05,
+                        child: ListView.builder(
+                          padding: EdgeInsets.fromLTRB(0, height*.005,0,0),
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: 1,
+                          prototypeItem:
+                          const ListTile(
+                            //onTap: (){},
+                            //contentPadding: EdgeInsets.fromLTRB(0,height*0.03,0,height*0.03),
                           ),
+                          itemBuilder: (context, index) {
+                            return
+                              Text(
+                                items[index].titlesubtheme,
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w100,
+                                  fontSize: 23,
+                                  color: Color.fromARGB(255,121, 124, 147),
+                                ),
+                              );
+                          },
                         ),
                       ),
+
+                      // Container(
+                      //   width: width,
+                      //   //color: Colors.yellow,
+                      //   child: Text(
+                      //     titlesubtheme,
+                      //     textAlign: TextAlign.center,
+                      //     style: const TextStyle(
+                      //       fontWeight: FontWeight.w100,
+                      //       fontSize: 23,
+                      //       color: Color.fromARGB(255,121, 124, 147),
+                      //     ),
+                      //   ),
+                      // ),
+
+                      //Puntaje 2
                       SizedBox(height: height * heightfactor*.5),
-                      score(
-                        width: width,
-                        height: height,
-                        answered: answered,
-                        to_answer: to_answer,
+                      Container(
+                        //color: Colors.deepPurple,
+                        height: height*.08,
+                        width: width *.28,
+                        child: ListView.builder(
+                          //shrinkWrap: true,
+                          padding: const EdgeInsets.fromLTRB(0,0,0,0),
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: 1,
+                          prototypeItem: score(
+                            height: height,
+                            width: width,
+                            answered: answered,
+                            to_answer: to_answer,
+                          ),
+                          itemBuilder: (context, index) {
+                            return
+                            score(
+                              height: height*.05,
+                              width: width,
+                              answered: items[index].answered,
+                              to_answer: items[index].to_answer,
+                            );
+                          },
+                        ),
                       ),
 
+                      // SizedBox(height: height * heightfactor*.5),
+                      // score(
+                      //   width: width,
+                      //   height: height,
+                      //   answered: answered,
+                      //   //answered: (items[index].answered),
+                      //   //text: (items[index].questions),
+                      //   to_answer: to_answer,
+                      // ),
+
                       //Generar subtemas
-                      SizedBox(
+                      Container(
+                        //color: Colors.red,
                         height: height*0.97,
                         child: ListView.builder(
                           physics: const NeverScrollableScrollPhysics(),
-                          padding: EdgeInsets.fromLTRB(0, height*0.03, 0, height*0.09),
+                          padding: EdgeInsets.fromLTRB(0,0, 0, height*0.12),
                           itemCount: items.length,
                           prototypeItem:
                           ListTile(
                             onTap: (){},
-                            contentPadding: EdgeInsets.fromLTRB(0,height*0.03,0,height*0.09),
-                            title: Text(items.first),
+                            contentPadding: EdgeInsets.fromLTRB(0,0,0,height*0.12),
+                            //REVISAR COMO HACER QUE SEA items.questions.first o algo similar
+                            //title: Text(items.first as String),
                           ),
                           itemBuilder: (context, index) {
                             return
@@ -396,8 +275,9 @@ class _HomeState extends State<Home> {
                                   question(
                                     width: width,
                                     height: height,
-                                    text: (items[index]),
-                                    state: 0,
+                                    text: (items[index].questions),
+                                    //state: 0,
+                                    state: (items[index].states[index]),
                                   ),
                                 ],
                               );
