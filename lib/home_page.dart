@@ -167,11 +167,11 @@ class _HomeState extends State<Home> {
                       //   height: height * 0.02,
                       // ),
 
-
                       //Generar estadísticas
                       Container(
-                        color: Colors.red,
-                        height: height*0.3,
+                        padding: EdgeInsets.zero,
+                        //color: Colors.red,
+                        height: height*0.27,
                         child: ListView.builder(
                           physics: const NeverScrollableScrollPhysics(),
                           padding: EdgeInsets.fromLTRB(0,0, 0, height*0.3),
@@ -201,33 +201,53 @@ class _HomeState extends State<Home> {
 
                       //Generar subtemas
                       Container(
-                        //color: Colors.red,
+                        padding: EdgeInsets.fromLTRB(width*0.07, height*0.01, width*0.07, height*0.01),
+                        //color: Colors.purple,
                         height: height*0.97,
-                        child: ListView.builder(
-                          physics: const NeverScrollableScrollPhysics(),
-                          padding: EdgeInsets.fromLTRB(0,0, 0, height*0.12),
-                          itemCount: items.length,
-                          prototypeItem:
-                          ListTile(
-                            onTap: (){},
-                            contentPadding: EdgeInsets.fromLTRB(0,0,0,height*0.12),
-                            //REVISAR COMO HACER QUE SEA items.unitss.first o algo similar
-                            //title: Text(items.first as String),
-                          ),
-                          itemBuilder: (context, index) {
-                            return
-                              Column(
-                                children: [
-                                  units(
-                                    width: width,
-                                    height: height,
-                                    text: (items[index].subthemes),
-                                    //state: 0,
-                                  ),
-                                ],
+
+                        // child: ListView.builder(
+                        //   physics: const NeverScrollableScrollPhysics(),
+                        //   padding: EdgeInsets.fromLTRB(0,0, 0, height*0.12),
+                        //   itemCount: items.length,
+                        //   prototypeItem:
+                        //   ListTile(
+                        //     onTap: (){},
+                        //     contentPadding: EdgeInsets.fromLTRB(0,0,0,height*0.12),
+                        //     //REVISAR COMO HACER QUE SEA items.unitss.first o algo similar
+                        //     //title: Text(items.first as String),
+                        //   ),
+                        //   itemBuilder: (context, index) {
+                        //     return
+                        //       Column(
+                        //         children: [
+                        //           units(
+                        //             width: width,
+                        //             height: height,
+                        //             text: (items[index].subthemes),
+                        //           ),
+                        //         ],
+                        //       );
+                        //   },
+                        // ),
+                          child: GridView.builder(
+                            padding: const EdgeInsets.all(0),
+                            physics:  const NeverScrollableScrollPhysics(),
+                            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2
+                            ),
+                            itemCount: 40,
+                            itemBuilder: (BuildContext context, int index) {
+                              return Container(
+                                //color: Colors.blue,
+                                padding: EdgeInsets.fromLTRB(width*0.03,height*0.01,width*0.03,height*0.01),
+                                child: units(
+                                  width: width,
+                                  height: height,
+                                  text: (items[index].unitsold),
+                                ),
                               );
-                          },
-                        ),
+                            },
+                          ),
                       ),
 
                       //Separador inferior

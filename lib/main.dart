@@ -86,6 +86,7 @@ class Todo {
   // adelante si se requiere (por ejemplo, [Pregunta 1: Lorem Ipsum,
   // Pregunta 2: Dolor Sit Amet]
   final String subthemes;
+  final String unitsold;
   // Los estados ya están en lista
   final List states;
 
@@ -125,7 +126,7 @@ class Todo {
 
       //Unidades
       this.unidad1, this.unidad2, this.unidad3, this.unidad4, this.unidad5, this.allunits,
-      this.titleunit,  this.titlesubtheme, this.answered, this.to_answer, this.subthemes, this.states,  );
+      this.titleunit,  this.titlesubtheme, this.answered, this.to_answer, this.subthemes, this.unitsold, this.states,  );
 }
 
 void main() {
@@ -191,6 +192,7 @@ void main() {
   // adelante si se requiere (por ejemplo, [Pregunta 1: Lorem Ipsum,
   // Pregunta 2: Dolor Sit Amet]
   final String subthemes;
+  final String unitsold;
   // Los estados ya están en lista
   List states;
 
@@ -288,14 +290,14 @@ void main() {
             2,
             4,
             'Subtema ${i + 1}',
+            'Unidad ${i + 1}',
+
             //Aquí se colocan los estados de las preguntas
             //Estados se refiere a:
             //0: Pregunta sin completar
             //1: Parcialmente completada
             //2: Completamente completada
             [2,0,1,2,0],
-
-            //List.generate(5, 'Pregunta ${i + 1}'),
 
           ),
 
