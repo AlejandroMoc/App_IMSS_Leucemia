@@ -30,7 +30,6 @@ class _HomeState extends State<Home> {
 
     double heightfactor = 0.04;
 
-
     return Scaffold(
       body: Container(
 
@@ -158,7 +157,6 @@ class _HomeState extends State<Home> {
                               ),
                             ),
 
-
                           ],
                         ),
                       ),
@@ -201,9 +199,10 @@ class _HomeState extends State<Home> {
 
                       //Generar subtemas
                       Container(
+                        //color: Colors.red,
                         padding: EdgeInsets.fromLTRB(width*0.07, height*0.01, width*0.07, height*0.01),
                         //color: Colors.purple,
-                        height: height*0.97,
+                        height: height*0.7,
 
                         // child: ListView.builder(
                         //   physics: const NeverScrollableScrollPhysics(),
@@ -229,25 +228,48 @@ class _HomeState extends State<Home> {
                         //       );
                         //   },
                         // ),
-                          child: GridView.builder(
-                            padding: const EdgeInsets.all(0),
-                            physics:  const NeverScrollableScrollPhysics(),
-                            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2
-                            ),
-                            itemCount: 40,
-                            itemBuilder: (BuildContext context, int index) {
-                              return Container(
-                                //color: Colors.blue,
-                                padding: EdgeInsets.fromLTRB(width*0.03,height*0.01,width*0.03,height*0.01),
-                                child: units(
-                                  width: width,
-                                  height: height,
-                                  text: (items[index].unitsold),
-                                ),
-                              );
-                            },
+                        // child: GestureDetector(
+                        //   onTap: () {},
+                        //
+                        // ),
+
+                        child: GridView.builder(
+                          padding: const EdgeInsets.all(0),
+                          physics:  const NeverScrollableScrollPhysics(),
+                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2
                           ),
+                          //itemCount: 5,
+                          itemCount: items.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return
+                              GestureDetector(
+                                onTap: () {},
+                                child: Container(
+                                  //color: Colors.blue,
+                                  padding: EdgeInsets.fromLTRB(width*0.03,height*0.01,width*0.03,height*0.01),
+                                  child: units(
+                                    width: width,
+                                    height: height,
+                                    text: (items[index].unitsold),
+                                  ),
+                                ),
+
+                              );
+
+                            //   Container(
+                            //   //color: Colors.blue,
+                            //   padding: EdgeInsets.fromLTRB(width*0.03,height*0.01,width*0.03,height*0.01),
+                            //   child: units(
+                            //     width: width,
+                            //     height: height,
+                            //     text: (items[index].unitsold),
+                            //   ),
+                            // );
+
+                          },
+                        ),
+
                       ),
 
                       //Separador inferior
