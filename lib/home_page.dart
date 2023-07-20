@@ -4,14 +4,15 @@ import 'package:rive/rive.dart' as rive;
 import 'package:glass_kit/glass_kit.dart';
 
 import 'back.dart';
-import 'banner.dart';
+import 'main.dart';
 import 'subtheme.dart';
+//import 'score.dart';
 import 'homebutton.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key, required this.items});
 
-  final List<String> items;
+  final List<Todo> items;
 
   @override
   State<Home> createState() => _HomeState(items);
@@ -19,24 +20,19 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  final List<String> items;
+  final List<Todo> items;
   _HomeState(this.items);
 
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    String screentitle = "Subtemas";
+
+    double heightfactor = 0.04;
+
+
     return Scaffold(
-
       body: Container(
-
-        decoration: const BoxDecoration(
-          // image: DecorationImage(
-          //   image: AssetImage("/images/Fondo.png"),
-          //   fit: BoxFit.cover,
-          // ),
-        ),
 
         //Hacer stack entre fondo y scrollview
         child:Stack(
@@ -48,7 +44,7 @@ class _HomeState extends State<Home> {
             //Glasmorphism con glass_kit
             // Se requiere de un borderColor, si no se rompe (es bug de la librería)
             GlassContainer.frostedGlass(
-              height: height, 
+              height: height,
               width: width,
               borderColor: Colors.transparent,
               borderWidth: 0,
@@ -60,46 +56,75 @@ class _HomeState extends State<Home> {
             ),
 
             SingleChildScrollView(
-              
               child: Stack(
                 children: [
-                  
-                  Column(
 
+                  Column(
                     children: [
                       //Separador superior
-                      SizedBox(
+                      Container(
+                        //color: Colors.green,
                         height: height * .05,
                       ),
                       //Banner superior
-                      SizedBox(
-                        height: height * .14,
+                      Container(
+                        //color: Colors.red,
+                        //height: height * (.25),
                         width: width * 1,
                         child: Stack(
-                          alignment: Alignment.center, 
+                          alignment: Alignment.bottomCenter,
                           children:[
                             //Titulo
-                            Positioned(
-                              child: Container(
-                                child: Text(
-                                    screentitle,
-                                    style: const TextStyle(
-                                      shadows: <Shadow>[
-                                        Shadow(
-                                          offset: Offset(0,6),
-                                          blurRadius: 3.0,
-                                          color: Color.fromRGBO(0, 0, 0, 0.21),
-                                        ),
-                                      //box-shadow: 0px 6px 4px 0px rgba(0, 0, 0, 0.21);
-                                      ],
-                                      fontWeight: FontWeight.w900,
-                                      fontSize: 40,
-                                      color: Color.fromRGBO(64, 64, 66, 1),
-                                    ),
+                            Column(
+                              children: [
+                                Container(
+                                  height: height * 0.05,
                                 ),
-                              ),
-                            ),
+                                Container(
+                                  //color: Colors.blue,
+                                  height: height *.18,
+                                  child: ListView.builder(
+                                    physics: const NeverScrollableScrollPhysics(),
+                                    itemCount: 1,
+                                    prototypeItem:
+                                    ListTile(
+                                      //onTap: (){},
+                                      contentPadding: EdgeInsets.fromLTRB(0,height*0.03,0,height*0.03),
+                                    ),
+                                    itemBuilder: (context, index) {
+                                      return
+                                        Container(
+                                          width: width * .8,
+                                          height: height,
+                                          //color: Colors.pink,
+                                          child: Text(
+                                            //Se debe borrar el textAlign cuando marque error de que no cabe
+                                            textAlign: TextAlign.center,
+                                            items[index].titlesubthemes,
+                                            //items[index].pregunta111[index],
+                                            style: const TextStyle(
+                                              shadows: <Shadow>[
+                                                Shadow(
+                                                  offset: Offset(0,6),
+                                                  blurRadius: 3.0,
+                                                  color: Color.fromRGBO(0, 0, 0, 0.21),
+                                                ),
+                                              ],
+                                              fontWeight: FontWeight.w900,
+                                              fontSize: 40,
+                                              color: Color.fromRGBO(64, 64, 66, 1),
+                                            ),
+                                          ),
+                                        );
+                                    },
+                                  ),
 
+
+
+
+                                ),
+                              ],
+                            ),
                             //Circulo amarillo
                             Positioned(
                               top: height*.06,
@@ -132,60 +157,47 @@ class _HomeState extends State<Home> {
                                 ),
                               ),
                             ),
+
+
                           ],
                         ),
                       ),
+                      // Container(
+                      //   color: Colors.green,
+                      //   height: height * 0.02,
+                      // ),
+
 
                       //Generar subtemas
-                      SizedBox(
+                      Container(
+                        //color: Colors.red,
                         height: height*0.97,
                         child: ListView.builder(
                           physics: const NeverScrollableScrollPhysics(),
-                          padding: EdgeInsets.fromLTRB(0, height*0.03, 0, height*0.09),
+                          padding: EdgeInsets.fromLTRB(0,0, 0, height*0.12),
                           itemCount: items.length,
                           prototypeItem:
-                            ListTile(
-                              onTap: (){},
-                              contentPadding: EdgeInsets.fromLTRB(0,height*0.03,0,height*0.09),
-                              title: Text(items.first),
-                            ),
-                            itemBuilder: (context, index) {
-                              return
+                          ListTile(
+                            onTap: (){},
+                            contentPadding: EdgeInsets.fromLTRB(0,0,0,height*0.12),
+                            //REVISAR COMO HACER QUE SEA items.subthemes.first o algo similar
+                            //title: Text(items.first as String),
+                          ),
+                          itemBuilder: (context, index) {
+                            return
                               Column(
                                 children: [
                                   subtheme(
                                     width: width,
                                     height: height,
-                                    text: (items[index]),
+                                    text: (items[index].subthemes),
+                                    //state: 0,
                                   ),
                                 ],
                               );
-                            },
+                          },
                         ),
                       ),
-
-                      // ANTIGUA FORMA DE IMPRIMIR LOS ELEMENTOS
-                      // subtheme(
-                      //   width: width,
-                      //   height: height,
-                      //   text: "Subtema 1",
-                      // ),
-                      //
-                      // SizedBox(height: height * 0.04,),
-                      //
-                      // subtheme(
-                      //   width: width,
-                      //   height: height,
-                      //   text: "Subtema 2",
-                      // ),
-                      //
-                      // SizedBox(height: height * 0.04,),
-                      //
-                      // subtheme(
-                      //   width: width,
-                      //   height: height,
-                      //   text: "Subtema 3",
-                      // ),
 
                       //Separador inferior
                       SizedBox(height: height * .03),
@@ -197,7 +209,7 @@ class _HomeState extends State<Home> {
                     children: [
                       SizedBox(height: height * .008),
                       const SafeArea(
-                        child:back(x: -0.95, y: 0)
+                          child:back(x: -0.95, y: 0)
                       ),
                     ],
                   ),
@@ -224,5 +236,6 @@ class _HomeState extends State<Home> {
         ),
       ),
     );
+
   }
 }
