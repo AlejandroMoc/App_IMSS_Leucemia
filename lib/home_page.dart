@@ -1,38 +1,42 @@
+import 'package:co_003b/stats.dart';
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart' as rive;
+// import 'package:flutter_svg/flutter_svg.dart';
 import 'package:glass_kit/glass_kit.dart';
 
 import 'account.dart';
-import 'banner.dart';
-import 'stats.dart';
+import 'main.dart';
 import 'units.dart';
+//import 'score.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+  const Home({super.key, required this.items});
+
+  final List<Todo> items;
+
   @override
-  State<Home> createState() => _HomeState();
+  State<Home> createState() => _HomeState(items);
 }
 
 class _HomeState extends State<Home> {
+
+  final List<Todo> items;
+  _HomeState(this.items);
 
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    return Scaffold(
 
+    double heightfactor = 0.04;
+
+
+    return Scaffold(
       body: Container(
 
-        decoration: const BoxDecoration(
-          // image: DecorationImage(
-          //   image: AssetImage("/images/Fondo.png"),
-          //   fit: BoxFit.cover,
-          // ),
-        ),
-
         //Hacer stack entre fondo y scrollview
-        child: Stack(
-          children: <Widget>[
+        child:Stack(
+          children: [
 
             //Fondo con animacion
             const rive.RiveAnimation.asset('assets/riv/animated_bg.riv', fit: BoxFit.cover),
@@ -40,7 +44,7 @@ class _HomeState extends State<Home> {
             //Glasmorphism con glass_kit
             // Se requiere de un borderColor, si no se rompe (es bug de la librería)
             GlassContainer.frostedGlass(
-              height: height, 
+              height: height,
               width: width,
               borderColor: Colors.transparent,
               borderWidth: 0,
@@ -50,44 +54,86 @@ class _HomeState extends State<Home> {
               // shadowColor: Colors.black.withOpacity(0.20),
               // frostedOpacity: 0.82,
             ),
-                        
-            //SingleChildScrollView
+
             SingleChildScrollView(
-              
               child: Stack(
                 children: [
 
                   Column(
                     children: [
-
                       //Separador superior
-                      SizedBox(
-                        height: height * .03,
+                      Container(
+                        //color: Colors.green,
+                        height: height * .05,
                       ),
-
-                      //Inicio, circulo y triangulo
-                      SizedBox(
-                        height: height * .14,
+                      //Banner superior
+                      Container(
+                        //color: Colors.red,
+                        //height: height * (.25),
                         width: width * 1,
                         child: Stack(
-                          alignment: Alignment.center, 
+                          alignment: Alignment.bottomCenter,
                           children:[
+                            //Titulo
+                            Column(
+                              children: [
+                                Container(
+                                  height: height * 0.05,
+                                ),
+                                Container(
+                                  //color: Colors.blue,
+                                  height: height *.18,
+                                  child: ListView.builder(
+                                    physics: const NeverScrollableScrollPhysics(),
+                                    itemCount: 1,
+                                    prototypeItem:
+                                    ListTile(
+                                      //onTap: (){},
+                                      contentPadding: EdgeInsets.fromLTRB(0,height*0.03,0,height*0.03),
+                                    ),
+                                    itemBuilder: (context, index) {
+                                      return
+                                        Container(
+                                          width: width * .8,
+                                          height: height,
+                                          //color: Colors.pink,
+                                          child: Text(
+                                            //Se debe borrar el textAlign cuando marque error de que no cabe
+                                            textAlign: TextAlign.center,
+                                            items[index].titlebegin,
+                                            //items[index].pregunta111[index],
+                                            style: const TextStyle(
+                                              shadows: <Shadow>[
+                                                Shadow(
+                                                  offset: Offset(0,6),
+                                                  blurRadius: 3.0,
+                                                  color: Color.fromRGBO(0, 0, 0, 0.21),
+                                                ),
+                                              ],
+                                              fontWeight: FontWeight.w900,
+                                              fontSize: 40,
+                                              color: Color.fromRGBO(64, 64, 66, 1),
+                                            ),
+                                          ),
+                                        );
+                                    },
+                                  ),
 
-                            banner(
-                              text: "Inicio",
-                              width: width,
-                              height: height,
+
+
+
+                                ),
+                              ],
                             ),
-
                             //Circulo amarillo
                             Positioned(
                               top: height*.06,
-                              left: width*.18,
+                              left: width*.1,
                               child: Container(
-                                color: Colors.transparent,
+                                //color: Colors.transparent,
                                 // alignment: Alignment.bottomLeft,
-                                height: height * .07,
-                                width: width * .3,
+                                height: height * .09,
+                                width: width * .2,
                                 child: const rive.RiveAnimation.asset(
                                   'assets/riv/circulo_amarillo.riv',
                                   // alignment: Alignment.bottomLeft,
@@ -95,15 +141,14 @@ class _HomeState extends State<Home> {
                                 ),
                               ),
                             ),
-
                             //Triangulo morado
                             Positioned(
-                              top: height*.01,
-                              right: width*.19,
+                              top: 0,
+                              right: width*.09,
                               child: Container(
-                                color: Colors.transparent,
+                                //color: Colors.transparent,
                                 // alignment: Alignment.bottomLeft,
-                                height: height * .07,
+                                height: height * .08,
                                 width: width * .3,
                                 child: const rive.RiveAnimation.asset(
                                   'assets/riv/triangulo_morado.riv',
@@ -114,151 +159,80 @@ class _HomeState extends State<Home> {
                             ),
 
 
-                            //ESTE SIRVE PERO USA CIRCLEAVATAR
-                            // const Positioned(
-                            //   top: 0,
-                            //   right: 285,
-                            //   child: CircleAvatar(
-                            //     // radius: 16,
-                            //     // backgroundColor: Colors.transparent,
-                            //     // foregroundColor: Colors.transparent,
-                            //     child: rive.RiveAnimation.asset('assets/riv/circulo_amarillo.riv'),
-                            //   ), //CircularAvatar
-                            // ),
-
-
                           ],
                         ),
                       ),
+                      // Container(
+                      //   color: Colors.green,
+                      //   height: height * 0.02,
+                      // ),
 
-                      //Separador
-                      SizedBox(
-                        height: height * .02,
+
+                      //Generar estadísticas
+                      Container(
+                        color: Colors.red,
+                        height: height*0.3,
+                        child: ListView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          padding: EdgeInsets.fromLTRB(0,0, 0, height*0.3),
+                          itemCount: 1,
+                          prototypeItem:
+                          ListTile(
+                            onTap: (){},
+                            contentPadding: EdgeInsets.fromLTRB(0,0,0,height*0.3),
+                            //REVISAR COMO HACER QUE SEA items.unitss.first o algo similar
+                            //title: Text(items.first as String),
+                          ),
+                          itemBuilder: (context, index) {
+                            return
+                              Column(
+                                children: [
+                                  stats(
+                                    width: width,
+                                    height: height,
+                                    text: (items[index].titlestats),
+                                    //state: 0,
+                                  ),
+                                ],
+                              );
+                          },
+                        ),
                       ),
 
-                      //Estadísticas
-                      stats(
-                        text: "Stats",
-                        width: width,
-                        height: height,
+                      //Generar subtemas
+                      Container(
+                        //color: Colors.red,
+                        height: height*0.97,
+                        child: ListView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          padding: EdgeInsets.fromLTRB(0,0, 0, height*0.12),
+                          itemCount: items.length,
+                          prototypeItem:
+                          ListTile(
+                            onTap: (){},
+                            contentPadding: EdgeInsets.fromLTRB(0,0,0,height*0.12),
+                            //REVISAR COMO HACER QUE SEA items.unitss.first o algo similar
+                            //title: Text(items.first as String),
+                          ),
+                          itemBuilder: (context, index) {
+                            return
+                              Column(
+                                children: [
+                                  units(
+                                    width: width,
+                                    height: height,
+                                    text: (items[index].subthemes),
+                                    //state: 0,
+                                  ),
+                                ],
+                              );
+                          },
+                        ),
                       ),
 
-                      //Separador
-                      SizedBox(
-                        height: height * .04,
-                      ),
-
-                      //Unidades
-                      Row(children: <Widget>[
-
-                        SizedBox(
-                          width: width * 0.1,
-                        ),
-                        units(
-                          width: width,
-                          height: height,
-                          text: "Unidad 1: Lorem ipsum",
-                        ),
-                        SizedBox(
-                          width: width * 0.04,
-                        ),
-                        units(
-                          width: width,
-                          height: height,
-                          text: "Unidad 2: Lorem ipsum",
-                        ),
-                        SizedBox(
-                          width: width * 0.08,
-                        )
-                      ]),
-
-                      //Separador
-                      SizedBox(
-                        height: height * .04,
-                      ),
-
-                      Row(children: <Widget>[
-                        SizedBox(
-                          width: width * 0.1,
-                        ),
-                        units(
-                          width: width,
-                          height: height,
-                          text: "Unidad 3: Lorem ipsum",
-                        ),
-                        SizedBox(
-                          width: width * 0.04,
-                        ),
-                        units(
-                          width: width,
-                          height: height,
-                          text: "Unidad 4: Lorem ipsum",
-                        ),
-                        SizedBox(
-                          width: width * 0.08,
-                        )
-                      ]),
-
-                      //Separador
-                      SizedBox(
-                        height: height * .04,
-                      ),
-
-                      Row(children: <Widget>[
-                        SizedBox(
-                          width: width * 0.1,
-                        ),
-                        units(
-                          width: width,
-                          height: height,
-                          text: "Unidad 5: Lorem ipsum",
-                        ),
-                        SizedBox(
-                          width: width * 0.04,
-                        ),
-                        units(
-                          width: width,
-                          height: height,
-                          text: "Unidad 6: Lorem ipsum",
-                        ),
-                        SizedBox(
-                          width: width * 0.08,
-                        )
-                      ]),
-
-                      //Separador
-                      SizedBox(
-                        height: height * .04,
-                      ),
-
-                      Row(children: <Widget>[
-                        SizedBox(
-                          width: width * 0.1,
-                        ),
-                        units(
-                          width: width,
-                          height: height,
-                          text: "Unidad 7: Lorem ipsum",
-                        ),
-                        SizedBox(
-                          width: width * 0.04,
-                        ),
-                        units(
-                          width: width,
-                          height: height,
-                          text: "Unidad 8: Lorem ipsum",
-                        ),
-                        SizedBox(
-                          width: width * 0.08,
-                        )
-                      ]),
-
-                      //Separador
-                      SizedBox(
-                        height: height * .08,
-                      ),
+                      //Separador inferior
+                      SizedBox(height: height * .03),
                     ],
-
                   ),
 
                   //Account
@@ -267,9 +241,9 @@ class _HomeState extends State<Home> {
                       //Separador
                       SizedBox(
                         height: height * .03,
-                      ), 
+                      ),
                       const SafeArea(
-                        child: Account(x: -0.9, y: 0)
+                          child: Account(x: -0.9, y: 0)
                       ),
                     ],
                   ),
@@ -278,11 +252,12 @@ class _HomeState extends State<Home> {
               ),
             ),
 
+            
+
           ],
         ),
-
       ),
-
     );
+
   }
 }

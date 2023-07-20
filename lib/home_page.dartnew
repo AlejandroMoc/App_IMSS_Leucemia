@@ -83,7 +83,7 @@ class Todo {
   //Títulos de las preguntas con sus estados
 
   // Los títulos de las preguntas se pueden cambiar a lista personalizada más
-  // adelante si se requiere (por ejemplo, [Pregunta 1: Lorem Ipsum,
+  // adelante si se requiere por ejemplo, [Pregunta 1: Lorem Ipsum,
   // Pregunta 2: Dolor Sit Amet]
   final String subthemes;
   // Los estados ya están en lista
@@ -297,7 +297,8 @@ void main() {
 
             //List.generate(5, 'Pregunta ${i + 1}'),
 
-          ),
+          ).toString(),
+          //).toString(),
 
         ),
       )
@@ -305,9 +306,10 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  //final List<String> items;
+  //final List<dynamic> items;
   final items;
   const MyApp({super.key, required this.items});
-
 
   @override
   Widget build(BuildContext context) {
