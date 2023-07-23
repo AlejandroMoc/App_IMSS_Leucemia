@@ -290,7 +290,7 @@ void main() {
             2,
             4,
             'Subtema ${i + 1}',
-            'Unidad ${i + 1}',
+            'Unidad ${i + 1}: Lorem Ipsum',
 
             //Aquí se colocan los estados de las preguntas
             //Estados se refiere a:
@@ -310,11 +310,10 @@ class MyApp extends StatelessWidget {
   final items;
   const MyApp({super.key, required this.items});
 
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'CO-004B',
+        title: 'build_pantallas',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           textTheme: GoogleFonts.nunitoTextTheme(),

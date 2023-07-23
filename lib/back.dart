@@ -20,7 +20,7 @@ class back extends StatelessWidget {
               shape: const CircleBorder(),
               padding: const EdgeInsets.all(2),
               onPressed: () => Navigator.of(context).pop(),
-            child: SvgPicture.asset("assets/svg/back2.svg"),
+            child: SvgPicture.asset("assets/svg/back.svg"),
         )
       ),
     );

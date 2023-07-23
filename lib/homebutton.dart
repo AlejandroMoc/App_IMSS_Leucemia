@@ -52,7 +52,7 @@ class _HomeButtonState extends State<HomeButton> {
                 );
               },
               tooltip: text,
-              child: SvgPicture.asset("assets/svg/Home.svg"),
+              child: SvgPicture.asset("assets/svg/home.svg"),
 
             ),
           ),
