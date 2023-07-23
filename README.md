@@ -27,7 +27,9 @@ La aplicación actualmente desarrollada debe contener información lo más actua
 - [**A01552348**](mailto:A01552348@tec.mx) Martín Pazos Castro
 - [**A01733587**](mailto:A01733587@tec.mx) Ulises Cuevas Sosa
 - [**A01732584**](mailto:A01732584@tec.mx) Ángel Estrada Centeno
+- [**A01736390**](mailto:a01736353@tec.mx) David Alberto Alvarado Cabrero
 - [**A01736353**](mailto:a01736353@tec.mx) Alejandro Daniel Moctezuma Cruz
+
 
 ## Licencia
 
