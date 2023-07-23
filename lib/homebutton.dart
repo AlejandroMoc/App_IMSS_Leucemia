@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import 'home_page.dart';
 import 'main.dart';
 
@@ -52,7 +51,10 @@ class _HomeButtonState extends State<HomeButton> {
                 );
               },
               tooltip: text,
-              child: SvgPicture.asset("assets/svg/home.svg"),
+              child: SvgPicture.asset(
+                "assets/svg/home.svg",
+                color: Colors.white,
+              ),
 
             ),
           ),

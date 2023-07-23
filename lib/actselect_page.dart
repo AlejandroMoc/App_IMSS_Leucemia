@@ -66,6 +66,7 @@ class _ActSelectPageState extends State<ActSelectPage> {
 
                   //Subtemas
                   evaluation(
+                    items: items,
                     width: width,
                     height: height,
                     text: "Evaluarse",

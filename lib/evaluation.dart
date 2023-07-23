@@ -1,6 +1,8 @@
+import 'package:build_pantallas/questionlist_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:rive/rive.dart' as rive;
+
+import 'main.dart';
 
 class evaluation extends StatelessWidget {
   // final String direction;
@@ -11,11 +13,14 @@ class evaluation extends StatelessWidget {
 
   const evaluation({
     super.key,
+    required this.items,
     required this.icon,
     required this.text,
     required this.width,
     required this.height,
   });
+
+  final List<Todo> items;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +44,12 @@ class evaluation extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(15)),
         ),
         child: MaterialButton(
-            onPressed: (() {}),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => QuestionListPage(items: items)),
+              );
+            },
             child: Align(
               alignment: Alignment.center,
 

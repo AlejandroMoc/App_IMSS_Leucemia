@@ -85,6 +85,7 @@ class Todo {
   // Los títulos de las preguntas se pueden cambiar a lista personalizada más
   // adelante si se requiere (por ejemplo, [Pregunta 1: Lorem Ipsum,
   // Pregunta 2: Dolor Sit Amet]
+  final String questionsold;
   final String subthemes;
   final String unitsold;
   // Los estados ya están en lista
@@ -126,7 +127,7 @@ class Todo {
 
       //Unidades
       this.unidad1, this.unidad2, this.unidad3, this.unidad4, this.unidad5, this.allunits,
-      this.titleunit,  this.titlesubtheme, this.answered, this.to_answer, this.subthemes, this.unitsold, this.states,  );
+      this.titleunit,  this.titlesubtheme, this.answered, this.to_answer, this.questionsold, this.subthemes, this.unitsold, this.states,  );
 }
 
 void main() {
@@ -289,6 +290,7 @@ void main() {
             'Subtema 1',
             2,
             4,
+            'Pregunta ${i + 1}',
             'Subtema ${i + 1}',
             'Unidad ${i + 1}: Lorem Ipsum',
 
