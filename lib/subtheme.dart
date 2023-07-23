@@ -1,4 +1,7 @@
+import 'package:build_pantallas/actselect_page.dart';
 import 'package:flutter/material.dart';
+
+import 'main.dart';
 
 class subtheme extends StatelessWidget {
   // final String direction;
@@ -8,11 +11,13 @@ class subtheme extends StatelessWidget {
 
   const subtheme({
     super.key,
-    // required this.direction,
+    required this.items,
     required this.text,
     required this.width,
     required this.height,
   });
+
+  final List<Todo> items;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +41,12 @@ class subtheme extends StatelessWidget {
       borderRadius: BorderRadius.all(Radius.circular(20)),
       ),
       child: MaterialButton(
-        onPressed: (() {}),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ActSelectPage(items: items)),
+            );
+          },
         child: Align(
           alignment: Alignment.center,
           child: Padding(

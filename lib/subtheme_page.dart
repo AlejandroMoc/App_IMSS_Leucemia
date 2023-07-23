@@ -28,7 +28,6 @@ class _SubthemePageState extends State<SubthemePage> {
 
     double heightfactor = 0.04;
 
-
     return Scaffold(
       body: Container(
 
@@ -142,7 +141,7 @@ class _SubthemePageState extends State<SubthemePage> {
 
                       //Generar subtemas
                       Container(
-                        color: Colors.red,
+                        //color: Colors.red,
                         height: height*0.97,
                         child: ListView.builder(
                           physics: const NeverScrollableScrollPhysics(),
@@ -150,7 +149,7 @@ class _SubthemePageState extends State<SubthemePage> {
                           itemCount: items.length,
                           prototypeItem:
                           ListTile(
-                            onTap: (){},
+                            //onTap: (){},
                             contentPadding: EdgeInsets.fromLTRB(0,0,0,height*0.12),
                             //REVISAR COMO HACER QUE SEA items.subthemes.first o algo similar
                             //title: Text(items.first as String),
@@ -160,6 +159,7 @@ class _SubthemePageState extends State<SubthemePage> {
                               Column(
                                 children: [
                                   subtheme(
+                                    items: items,
                                     width: width,
                                     height: height,
                                     text: (items[index].subthemes),
