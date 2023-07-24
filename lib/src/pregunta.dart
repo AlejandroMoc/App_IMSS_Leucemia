@@ -17,10 +17,31 @@ class _PreguntaState extends State<Pregunta> {
       backgroundColor: Colors.white,
       body: ListView(children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 90.0),
+          padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 40.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Align(
+                alignment: Alignment.topLeft,
+                child: InkWell(
+                  onTap: () {},
+                  borderRadius: BorderRadius.circular(
+                      30.0), // Ajusta el valor para cambiar la forma del botón
+                  child: Container(
+                    width: 60.0,
+                    height: 60.0,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.transparent,
+                    ),
+                    child: const Icon(
+                      Icons.arrow_back,
+                      color: Color(0xFF797C93),
+                      size: 50.0,
+                    ),
+                  ),
+                ),
+              ),
               const Text(
                 "Pregunta 1:",
                 style: TextStyle(
@@ -149,13 +170,113 @@ class _PreguntaState extends State<Pregunta> {
                         style: TextStyle(fontSize: 20.0),
                       ),
                     ),
+                    SizedBox(height: height * 0.035),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: Stack(
+                            children: [
+                              SizedBox(
+                                  height: height * 0.08,
+                                  width: width * 0.15,
+                                  child: const Icon(
+                                    Icons.arrow_back,
+                                    size: 35.0,
+                                    color: Color(0xFF797C93),
+                                  )),
+                              SizedBox(
+                                  height: height * 0.08,
+                                  width: width * 0.5,
+                                  child: MaterialButton(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(50)),
+                                    elevation: 0,
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              const Pregunta(),
+                                        ),
+                                      );
+                                    },
+                                    color: Colors.transparent,
+                                    child: Align(
+                                      alignment:
+                                          FractionalOffset(width * 0.2, 0.5),
+                                      child: const Text(
+                                        'Pregunta anterior',
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w600,
+                                            color: Color(0xFF797C93)),
+                                      ),
+                                      //colorBrightness: Brightness.dark,
+                                    ),
+                                  )),
+                            ],
+                          ),
+                        ),
+                        SizedBox(width: width * 0.05),
+                        Expanded(
+                          child: Stack(
+                            children: [
+                              SizedBox(
+                                height: height * 0.08,
+                                width: width * 0.5,
+                                child: MaterialButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(50),
+                                  ),
+                                  elevation: 0,
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => const Pregunta(),
+                                      ),
+                                    );
+                                  },
+                                  color: Colors.transparent,
+                                  child: const Align(
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      'Siguiente pregunta',
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xFF797C93),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment.centerRight,
+                                child: SizedBox(
+                                  height: height * 0.08,
+                                  width: width * 0.15,
+                                  child: const Icon(
+                                    Icons.arrow_forward,
+                                    size: 35.0,
+                                    color: Color(0xFF797C93),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
             ],
           ),
         ),
-        Row(
+        /*Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Expanded(
@@ -250,7 +371,7 @@ class _PreguntaState extends State<Pregunta> {
               ),
             ),
           ],
-        ),
+        ),*/
       ]),
     );
   }
