@@ -1,0 +1,48 @@
+name: prueba_1
+description: A new Flutter project.
+# La siguiente línea evita que el paquete se publique accidentalmente en pub.dev usando `flutter pub publish`.
+# Esto es preferible para paquetes privados.
+publish_to: 'none' # Elimina esta línea si deseas publicar en pub.dev
+
+# Define la versión y el número de compilación de tu aplicación.
+# Un número de versión consta de tres números separados por puntos, como 1.2.43,
+# seguido opcionalmente por un número de compilación separado por un +.
+# Tanto la versión como el número de compilación se pueden sobrescribir en el proceso de compilación de Flutter
+# especificando --build-name y --build-number, respectivamente.
+# En Android, build-name se utiliza como versionName, mientras que build-number se utiliza como versionCode.
+# Obtén más información sobre la versión de Android en: https://developer.android.com/studio/publish/versioning
+# En iOS, build-name se utiliza como CFBundleShortVersionString, mientras que build-number se utiliza como CFBundleVersion.
+# Obtén más información sobre la versión de iOS en:
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# En Windows, build-name se utiliza como las partes mayor, menor y de revisión
+# de las versiones del producto y del archivo, mientras que build-number se utiliza como sufijo de compilación.
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  google_fonts: ^2.0.0
+  cupertino_icons: ^1.0.2
+  glassmorphism: ^3.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Nunito/Nunito-Italic-VariableFont_wght.ttf
+        - asset: assets/fonts/Nunito/Nunito-VariableFont_wght.ttf
+        - asset: assets/fonts/Nunito/Nunito-Bold.ttf
+          weight: 700
+
+  assets:
+    - assets/images/
