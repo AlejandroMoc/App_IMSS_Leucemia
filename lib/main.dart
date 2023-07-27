@@ -385,7 +385,9 @@ class MyApp extends StatelessWidget {
         title: 'build_pantallas',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          textTheme: GoogleFonts.nunitoTextTheme(),
+          textTheme: GoogleFonts.nunitoTextTheme(
+            Theme.of(context).textTheme,
+          ),
         ),
         initialRoute: "home",
         routes: {

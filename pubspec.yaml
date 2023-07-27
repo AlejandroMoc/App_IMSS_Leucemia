@@ -34,7 +34,7 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
-  google_fonts: ^4.0.3
+  google_fonts: ^5.1.0
   rive: ^0.11.4
   flutter_svg: ^1.1.6
   glass_kit: ^2.0.1
@@ -64,6 +64,7 @@ flutter:
     - assets/svg/
     - assets/svg/home.svg
     - assets/svg/logo_central.svg
+    - google_fonts/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   #   - /riv/animated_bg.riv
