@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.co_003b">
    <application
-        android:label="co_003b"
+        android:label="IMSS - Leucemia"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

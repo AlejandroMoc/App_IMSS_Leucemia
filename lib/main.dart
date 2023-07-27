@@ -1,6 +1,10 @@
 //build_pantallas
+//A01736345 Luis Ángel Cruz García
 //A01736353 Alejandro Daniel Moctezuma Cruz
-//Domingo 23 de julio de 2023
+//Jueves 27 de julio de 2023
+
+//El título de la aplicación en la barra de tareas de Android se encuentra en la ruta
+//android/app/src/main/AndroidManifest.xml
 
 import 'package:build_pantallas/welcome_page.dart';
 import 'package:flutter/material.dart';

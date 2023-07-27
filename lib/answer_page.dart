@@ -179,139 +179,126 @@ class _AnswerPageState extends State<AnswerPage> {
           ),
 
           //Botones preguntas
+          //Pregunta anterior
           Positioned(
-            bottom: 0,
-            width: MediaQuery.of(context).size.width,
+            bottom: height*.0,
             child: SizedBox(
-              height: height*.12,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  //Pregunta anterior
-                  Positioned(
-                    bottom: height*.0,
-                    child: SizedBox(
-                      //color: Colors.blue,
-                      height: height * 0.12,
-                      width: width * 0.5,
-                      child: MaterialButton(
-                        //shape: RoundedRectangleBorder(
-                        //   borderRadius: BorderRadius.circular(50),
-                        // ),
-                        elevation: 0,
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  AnswerPage(items: items),
-                            ),
-                          );
-                        },
-                        color: Colors.white,
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              left: width*.15,
-                              bottom: height*.02,
-                              child: SizedBox(
-                                width: width*.3,
-                                child: const Text(
-                                  'Pregunta anterior',
-                                  style: TextStyle(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.w400,
-                                      color: Color(0xFF797C93)),
-                                ),
-                              ),
-                              //colorBrightness: Brightness.dark,
-                            ),
+              //color: Colors.blue,
+              height: height * 0.12,
+              width: width * 0.5,
+              child: MaterialButton(
+                //shape: RoundedRectangleBorder(
+                //   borderRadius: BorderRadius.circular(50),
+                // ),
+                elevation: 0,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          AnswerPage(items: items),
+                    ),
+                  );
+                },
+                color: Colors.white,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      left: width*.15,
+                      bottom: height*.02,
+                      child: SizedBox(
+                        width: width*.3,
+                        child: const Text(
+                          'Pregunta anterior',
+                          style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xFF797C93)),
+                        ),
+                      ),
+                      //colorBrightness: Brightness.dark,
+                    ),
 
-                            Positioned(
-                              left: width*.02,
-                              bottom: height*.03,
-                              child: SizedBox(
-                                //color: Colors.red,
-                                height: height * 0.07,
-                                width: width * 0.07,
-                                child: SvgPicture.asset(
-                                    "assets/svg/back.svg",
-                                    fit: BoxFit.scaleDown
-                                ),
-                              ),
-                            ),
-
-                          ],
+                    Positioned(
+                      left: width*.02,
+                      bottom: height*.03,
+                      child: SizedBox(
+                        //color: Colors.red,
+                        height: height * 0.07,
+                        width: width * 0.07,
+                        child: SvgPicture.asset(
+                            "assets/svg/back.svg",
+                            fit: BoxFit.scaleDown
                         ),
                       ),
                     ),
-                  ),
-                  //Pregunta siguiente
-                  Positioned(
-                    bottom: height*.0,
-                    child: Expanded(
-                      child: SizedBox(
-                        //color: Colors.blue,
-                        height: height * 0.12,
-                        width: width * 0.5,
-                        child: MaterialButton(
-                          //shape: RoundedRectangleBorder(
-                          //   borderRadius: BorderRadius.circular(50),
-                          // ),
-                          elevation: 0,
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    AnswerPage(items: items),
-                              ),
-                            );
-                          },
-                          color: Colors.white,
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                right: width*.12,
-                                bottom: height*.02,
-                                child: SizedBox(
-                                  width: width*.3,
-                                  child: const Text(
-                                    'Siguiente pregunta',
-                                    style: TextStyle(
-                                        fontSize: 24,
-                                        fontWeight: FontWeight.w400,
-                                        color: Color(0xFF797C93)),
-                                  ),
-                                ),
-                                //colorBrightness: Brightness.dark,
-                              ),
 
-                              Positioned(
-                                right: width*.02,
-                                bottom: height*.03,
-                                child: SizedBox(
-                                  //color: Colors.red,
-                                  height: height * 0.07,
-                                  width: width * 0.07,
-                                  child: SvgPicture.asset(
-                                      "assets/svg/foward.svg",
-                                      fit: BoxFit.scaleDown
-                                  ),
-                                ),
-                              ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          //Pregunta siguiente
+          Positioned(
+            bottom: height*.0,
+            child: Transform.translate(
+              offset: Offset(width*.5, 0.0),
+              child: SizedBox(
+                //color: Colors.blue,
+                height: height * 0.12,
+                width: width * 0.5,
+                child: MaterialButton(
+                  //shape: RoundedRectangleBorder(
+                  //   borderRadius: BorderRadius.circular(50),
+                  // ),
+                  elevation: 0,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            AnswerPage(items: items),
+                      ),
+                    );
+                  },
+                  color: Colors.white,
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        right: width*.12,
+                        bottom: height*.02,
+                        child: SizedBox(
+                          width: width*.3,
+                          child: const Text(
+                            'Siguiente pregunta',
+                            style: TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xFF797C93)),
+                          ),
+                        ),
+                        //colorBrightness: Brightness.dark,
+                      ),
 
-                            ],
+                      Positioned(
+                        right: width*.02,
+                        bottom: height*.03,
+                        child: SizedBox(
+                          //color: Colors.red,
+                          height: height * 0.07,
+                          width: width * 0.07,
+                          child: SvgPicture.asset(
+                              "assets/svg/foward.svg",
+                              fit: BoxFit.scaleDown
                           ),
                         ),
                       ),
-                    ),
+
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
-
-
           ),
         ],
       ),
