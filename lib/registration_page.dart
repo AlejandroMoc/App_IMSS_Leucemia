@@ -53,30 +53,34 @@ class _RegistroState extends State<Registro> {
                 // frostedOpacity: 0.82,
               ),
 
+              //Circulo amarillo
+              Transform.translate(
+                offset: Offset(width*.01, height*.01),
+                child: Transform.rotate(
+                  angle: -math.pi / 4.1,
+                  child: Container(
+                    color: Colors.transparent,
+                    // alignment: Alignment.bottomLeft,
+                    height: height * .2,
+                    width: width * .3,
+                    child: const rive.RiveAnimation.asset(
+                      'assets/riv/circulo_amarillo.riv',
+                      // alignment: Alignment.bottomLeft,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+              ),
+              
               Container(
                 width: width,
 
+                
                 //Circulo amarillo
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(0,height*.12,0,0),
-                  child: Stack(children: [
-                    Align(
-                      alignment: Alignment.center,
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                            bottom: height * .4, right: width * .6),
-                        child: SizedBox(
-                          //color: Colors.red,
-                          width: width * 2,
-                          height: height * .23,
-                          child: const rive.RiveAnimation.asset(
-                            'assets/riv/circulo_amarillo.riv',
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ),
-
+                  child: Stack(
+                    children: [
                     Padding(
                       padding: EdgeInsets.fromLTRB(width* .09, height*0, width*.09, height* 0),
                       child: Stack(
@@ -314,18 +318,14 @@ class _RegistroState extends State<Registro> {
                         ],
                       ),
                     ),
-
-
-
                   ],
                   ),
                 ),
               ),
 
               //Triangulo morado
-              Positioned(
-                top: height * .8,
-                right: width * .04,
+              Transform.translate(
+                offset: Offset(width*.7, height*.8),
                 child: Transform.rotate(
                   angle: -math.pi / 4.1,
                   child: Container(
@@ -341,6 +341,7 @@ class _RegistroState extends State<Registro> {
                   ),
                 ),
               ),
+              
 
             ],
           ),
