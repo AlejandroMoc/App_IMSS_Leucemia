@@ -37,7 +37,12 @@ class _RegistroState extends State<Registro> {
             children: [
 
               //Fondo animado
-              const rive.RiveAnimation.asset('assets/riv/animated_bg.riv', fit: BoxFit.cover),
+              Container(
+                height: height,
+                width: width,
+                child: const rive.RiveAnimation.asset('assets/riv/animated_bg.riv', fit: BoxFit.cover),
+              ),
+
 
               //Glasmorphism con glass_kit
               // Requiere un borderColor manual (bug de la librería)
@@ -74,7 +79,7 @@ class _RegistroState extends State<Registro> {
               
               Container(
                 width: width,
-
+                height: height,
                 
                 //Circulo amarillo
                 child: Padding(
@@ -295,7 +300,7 @@ class _RegistroState extends State<Registro> {
 
                           Center(
                             child: Padding(
-                              padding: EdgeInsets.fromLTRB(0,height*.02,0,0),
+                              padding: EdgeInsets.fromLTRB(0,0,0,height*.75),
                               child: const Text(
                                 "Regístrate",
                                 style: TextStyle(
