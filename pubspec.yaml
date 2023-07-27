@@ -38,6 +38,7 @@ dependencies:
   rive: ^0.11.4
   flutter_svg: ^1.1.6
   glass_kit: ^2.0.1
+  glassmorphism: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -53,6 +54,8 @@ flutter:
   assets:
     - assets/
     - assets/riv/
+    - assets/images/
+    - assets/images/Logo_central.png
     - assets/riv/animated_bg.riv
     - assets/riv/circulo_amarillo.riv
     - assets/riv/triangulo_morado.riv

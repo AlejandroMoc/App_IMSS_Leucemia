@@ -19,7 +19,6 @@ class QuestionListPage extends StatefulWidget {
 }
 
 class _QuestionListPageState extends State<QuestionListPage> {
-
   final List<Todo> items;
   _QuestionListPageState(this.items);
 
@@ -37,15 +36,12 @@ class _QuestionListPageState extends State<QuestionListPage> {
 
     return Scaffold(
       body: Container(
-
         //Hacer stack entre fondo y scrollview
-        child:Stack(
+        child: Stack(
           children: [
-
             SingleChildScrollView(
               child: Stack(
                 children: [
-
                   Column(
                     children: [
                       //Separador superior
@@ -60,7 +56,7 @@ class _QuestionListPageState extends State<QuestionListPage> {
                         width: width * 1,
                         child: Stack(
                           alignment: Alignment.bottomCenter,
-                          children:[
+                          children: [
                             //Titulo
                             Column(
                               children: [
@@ -69,48 +65,49 @@ class _QuestionListPageState extends State<QuestionListPage> {
                                 ),
                                 Container(
                                   //color: Colors.blue,
-                                  height: height *.18,
+                                  height: height * .18,
                                   child: ListView.builder(
-                                    physics: const NeverScrollableScrollPhysics(),
+                                    physics:
+                                        const NeverScrollableScrollPhysics(),
                                     itemCount: 1,
-                                    prototypeItem:
-                                    ListTile(
+                                    prototypeItem: ListTile(
                                       //onTap: (){},
-                                      contentPadding: EdgeInsets.fromLTRB(0,height*0.03,0,height*0.03),
+                                      contentPadding: EdgeInsets.fromLTRB(
+                                          0, height * 0.03, 0, height * 0.03),
                                     ),
                                     itemBuilder: (context, index) {
-                                      return
-                                        Container(
-                                          width: width * .8,
-                                          height: height,
-                                          //color: Colors.pink,
-                                          child: Text(
-                                            textAlign: TextAlign.center,
-                                            items[index].titleunit,
-                                            style: const TextStyle(
-                                              shadows: <Shadow>[
-                                                Shadow(
-                                                  offset: Offset(0,6),
-                                                  blurRadius: 3.0,
-                                                  color: Color.fromRGBO(0, 0, 0, 0.21),
-                                                ),
-                                              ],
-                                              fontWeight: FontWeight.w900,
-                                              fontSize: 40,
-                                              color: Color.fromRGBO(64, 64, 66, 1),
-                                            ),
+                                      return Container(
+                                        width: width * .8,
+                                        height: height,
+                                        //color: Colors.pink,
+                                        child: Text(
+                                          textAlign: TextAlign.center,
+                                          items[index].titleunit,
+                                          style: const TextStyle(
+                                            shadows: <Shadow>[
+                                              Shadow(
+                                                offset: Offset(0, 6),
+                                                blurRadius: 3.0,
+                                                color: Color.fromRGBO(
+                                                    0, 0, 0, 0.21),
+                                              ),
+                                            ],
+                                            fontWeight: FontWeight.w900,
+                                            fontSize: 40,
+                                            color:
+                                                Color.fromRGBO(64, 64, 66, 1),
                                           ),
-                                        );
+                                        ),
+                                      );
                                     },
                                   ),
-
                                 ),
                               ],
                             ),
                             //Circulo amarillo
                             Positioned(
-                              top: height*.13,
-                              left: width*.01,
+                              top: height * .13,
+                              left: width * .01,
                               child: Container(
                                 // alignment: Alignment.bottomLeft,
                                 height: height * .09,
@@ -125,7 +122,7 @@ class _QuestionListPageState extends State<QuestionListPage> {
                             //Triangulo morado
                             Positioned(
                               top: 0,
-                              right: width*.01,
+                              right: width * .01,
                               child: Container(
                                 // alignment: Alignment.bottomLeft,
                                 height: height * .08,
@@ -148,40 +145,38 @@ class _QuestionListPageState extends State<QuestionListPage> {
                       //Puntaje 1
                       Container(
                         //color: Colors.deepPurple,
-                        height: height*.05,
+                        height: height * .05,
                         child: ListView.builder(
-                          padding: EdgeInsets.fromLTRB(0, height*.005,0,0),
+                          padding: EdgeInsets.fromLTRB(0, height * .005, 0, 0),
                           physics: const NeverScrollableScrollPhysics(),
                           itemCount: 1,
-                          prototypeItem:
-                          const ListTile(
-                            //onTap: (){},
-                            //contentPadding: EdgeInsets.fromLTRB(0,height*0.03,0,height*0.03),
-                          ),
+                          prototypeItem: const ListTile(
+                              //onTap: (){},
+                              //contentPadding: EdgeInsets.fromLTRB(0,height*0.03,0,height*0.03),
+                              ),
                           itemBuilder: (context, index) {
-                            return
-                              Text(
-                                items[index].titlesubtheme,
-                                textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.w100,
-                                  fontSize: 23,
-                                  color: Color.fromARGB(255,121, 124, 147),
-                                ),
-                              );
+                            return Text(
+                              items[index].titlesubtheme,
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w100,
+                                fontSize: 23,
+                                color: Color.fromARGB(255, 121, 124, 147),
+                              ),
+                            );
                           },
                         ),
                       ),
 
                       //Puntaje 2
-                      SizedBox(height: height * heightfactor*.5),
+                      SizedBox(height: height * heightfactor * .5),
                       Container(
                         //color: Colors.deepPurple,
-                        height: height*.08,
-                        width: width *.28,
+                        height: height * .08,
+                        width: width * .28,
                         child: ListView.builder(
                           //shrinkWrap: true,
-                          padding: const EdgeInsets.fromLTRB(0,0,0,0),
+                          padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                           physics: const NeverScrollableScrollPhysics(),
                           itemCount: 1,
                           prototypeItem: score(
@@ -191,13 +186,12 @@ class _QuestionListPageState extends State<QuestionListPage> {
                             to_answer: to_answer,
                           ),
                           itemBuilder: (context, index) {
-                            return
-                              score(
-                                height: height*.05,
-                                width: width,
-                                answered: items[index].answered,
-                                to_answer: items[index].to_answer,
-                              );
+                            return score(
+                              height: height * .05,
+                              width: width,
+                              answered: items[index].answered,
+                              to_answer: items[index].to_answer,
+                            );
                           },
                         ),
                       ),
@@ -205,31 +199,30 @@ class _QuestionListPageState extends State<QuestionListPage> {
                       //Generar subtemas
                       Container(
                         //color: Colors.red,
-                        height: height*0.97,
+                        height: height * 0.97,
                         child: ListView.builder(
                           physics: const NeverScrollableScrollPhysics(),
-                          padding: EdgeInsets.fromLTRB(0,0, 0, height*0.12),
+                          padding: EdgeInsets.fromLTRB(0, 0, 0, height * 0.12),
                           itemCount: items.length,
-                          prototypeItem:
-                          ListTile(
-                            onTap: (){},
-                            contentPadding: EdgeInsets.fromLTRB(0,0,0,height*0.12),
+                          prototypeItem: ListTile(
+                            onTap: () {},
+                            contentPadding:
+                                EdgeInsets.fromLTRB(0, 0, 0, height * 0.12),
                             //REVISAR COMO HACER QUE SEA items.questionsold.first o algo similar
                             //title: Text(items.first as String),
                           ),
                           itemBuilder: (context, index) {
-                            return
-                              Column(
-                                children: [
-                                  question(
-                                    width: width,
-                                    height: height,
-                                    text: (items[index].questionsold),
-                                    //state: 0,
-                                    state: (items[index].states[index]),
-                                  ),
-                                ],
-                              );
+                            return Column(
+                              children: [
+                                question(
+                                  width: width,
+                                  height: height,
+                                  text: (items[index].questionsold),
+                                  //state: 0,
+                                  state: (items[index].states[index]),
+                                ),
+                              ],
+                            );
                           },
                         ),
                       ),
@@ -243,12 +236,9 @@ class _QuestionListPageState extends State<QuestionListPage> {
                   Column(
                     children: [
                       SizedBox(height: height * .008),
-                      const SafeArea(
-                          child:back(x: -0.95, y: 0)
-                      ),
+                      const SafeArea(child: back(x: -0.95, y: 0)),
                     ],
                   ),
-
                 ],
               ),
             ),
@@ -267,11 +257,9 @@ class _QuestionListPageState extends State<QuestionListPage> {
                 ),
               ),
             ),
-
           ],
         ),
       ),
     );
-
   }
 }
