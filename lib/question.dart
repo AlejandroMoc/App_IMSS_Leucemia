@@ -1,6 +1,8 @@
-import 'package:build_pantallas/pregunta.dart';
+import 'package:build_pantallas/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'answer_page.dart';
 
 class question extends StatelessWidget {
   final String text;
@@ -10,11 +12,14 @@ class question extends StatelessWidget {
 
   const question({
     super.key,
+    required this.items,
     required this.state,
     required this.text,
     required this.width,
     required this.height,
   });
+
+  final List<Todo> items;
 
 //Imprimir logo correspondiente al estado de la pregunta
   Widget getLockStatus() {
@@ -61,10 +66,11 @@ class question extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const Pregunta(),
+                  builder: (context) => AnswerPage(items: items),
                 ),
               );
             }),
+            //onPressed: () {  },
             child: Align(
               alignment: Alignment.center,
               child: Row(

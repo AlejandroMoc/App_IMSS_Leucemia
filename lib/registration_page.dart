@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Glassmorphism.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:glass_kit/glass_kit.dart';
 import 'package:rive/rive.dart' as rive;
 import 'dart:math' as math;
 import 'home_page.dart';
@@ -34,245 +35,294 @@ class _RegistroState extends State<Registro> {
         children: [
           Stack(
             children: [
-              SizedBox(
-                  height: height,
-                  width: width,
-                  child: const rive.RiveAnimation.asset(
-                    'assets/riv/animated_bg.riv',
-                    fit: BoxFit.cover,
-                  )),
-              FrostedGlassBox(
-                  theWidth: width,
-                  theHeight: height,
-                  theChild: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 0.0, vertical: 90.0),
-                    child: Stack(children: [
-                      Align(
-                        alignment: Alignment.center,
-                        child: Padding(
-                          padding: EdgeInsets.only(
-                              bottom: height * .4, right: width * .6),
-                          child: Container(
-                            //color: Colors.red,
-                            width: width * 2,
-                            height: height * .23,
-                            child: const rive.RiveAnimation.asset(
-                              'assets/riv/circulo_amarillo.riv',
-                              fit: BoxFit.cover,
-                            ),
+
+              //Fondo animado
+              const rive.RiveAnimation.asset('assets/riv/animated_bg.riv', fit: BoxFit.cover),
+
+              //Glasmorphism con glass_kit
+              // Requiere un borderColor manual (bug de la librería)
+              GlassContainer.frostedGlass(
+                height: height,
+                width: width,
+                borderColor: Colors.transparent,
+                borderWidth: 0,
+                blur: 15,
+                // elevation: 3.0,
+                // isFrostedGlass: false,
+                // shadowColor: Colors.black.withOpacity(0.20),
+                // frostedOpacity: 0.82,
+              ),
+
+              Container(
+                width: width,
+
+                //Circulo amarillo
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(0,height*.12,0,0),
+                  child: Stack(children: [
+                    Align(
+                      alignment: Alignment.center,
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            bottom: height * .4, right: width * .6),
+                        child: SizedBox(
+                          //color: Colors.red,
+                          width: width * 2,
+                          height: height * .23,
+                          child: const rive.RiveAnimation.asset(
+                            'assets/riv/circulo_amarillo.riv',
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 30.0, vertical: 0.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Text(
-                              "Regístrate",
-                              style: TextStyle(
-                                fontSize: 40.0,
-                                fontWeight: FontWeight.w600,
-                                color: Color.fromARGB(255, 66, 66, 66),
-                                shadows: [
-                                  Shadow(
-                                    color: Color.fromARGB(255, 170, 170,
-                                        170), // Color del sombreado
-                                    offset: Offset(
-                                        2, 4), // Desplazamiento del sombreado
-                                    blurRadius:
-                                        10.0, // Radio de difuminado del sombreado
+                    ),
+
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(width* .09, height*0, width*.09, height* 0),
+                      child: Stack(
+
+                        children: [
+
+                          SizedBox(height: height * 0.03),
+
+                          //Contenedor blanco
+                          SizedBox(
+                            height: height * 0.78,
+                            width: width * 0.85,
+                            child: Container(
+                              clipBehavior: Clip.antiAliasWithSaveLayer,
+                              decoration: BoxDecoration(
+                                  boxShadow: const [
+                                    BoxShadow(
+                                        color: Colors.black26,
+                                        offset: Offset(0.0, 10.0),
+                                        blurRadius: 5.0),
+                                  ],
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.white,
+                              ),
+                              child: Column(
+                                children: [
+                                  Container(height: height*.1),
+
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 20, vertical: 16),
+                                    child: TextField(
+                                      // enableInteractiveSelection: false,
+                                      decoration: const InputDecoration(
+                                        enabledBorder:
+                                        UnderlineInputBorder(
+                                            borderSide: BorderSide(
+                                                width: 1,
+                                                color: Color.fromARGB(
+                                                    255, 223, 220, 220))),
+                                        hintText: "No. de Cédula",
+                                        suffixIcon: Icon(Icons.people),
+                                        hintStyle: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 16,
+                                          color: Color.fromRGBO(196, 196, 196, 1), // Color gris claro para el hintText
+                                        ),
+                                      ),
+                                      onSubmitted: (value) {
+                                        _cedula = value;
+                                      },
+                                    ),
                                   ),
+
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 20, vertical: 16),
+                                    child: TextField(
+                                      // enableInteractiveSelection: false,
+                                      decoration: const InputDecoration(
+                                        enabledBorder:
+                                        UnderlineInputBorder(
+                                            borderSide: BorderSide(
+                                                width: 1,
+                                                color: Color.fromARGB(
+                                                    255, 223, 220, 220))),
+                                        hintText: "Nombre(s)",
+                                        hintStyle: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 16,
+                                          color: Color.fromRGBO(196, 196, 196, 1), // Color gris claro para el hintText
+                                        ),
+                                      ),
+                                      onSubmitted: (value) {
+                                        _nombre = value;
+                                      },
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 20, vertical: 16),
+                                    child: TextField(
+                                      // enableInteractiveSelection: false,
+                                      decoration: const InputDecoration(
+                                        enabledBorder:
+                                        UnderlineInputBorder(
+                                            borderSide: BorderSide(
+                                                width: 1,
+                                                color: Color.fromARGB(
+                                                    255, 223, 220, 220))),
+                                        hintText: "Primer apellido",
+                                        hintStyle: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 16,
+                                          color: Color.fromRGBO(196, 196, 196, 1), // Color gris claro para el hintText
+                                        ),
+                                      ),
+                                      onSubmitted: (value) {
+                                        _papellido = value;
+                                      },
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 20, vertical: 16),
+                                    child: TextField(
+                                      // enableInteractiveSelection: false,
+                                      decoration: const InputDecoration(
+                                        enabledBorder:
+                                        UnderlineInputBorder(
+                                            borderSide: BorderSide(
+                                                width: 1,
+                                                color: Color.fromARGB(
+                                                    255, 223, 220, 220)
+                                            )
+                                        ),
+                                        hintText: "Segundo apellido",
+                                        hintStyle: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 16,
+                                          color: Color.fromRGBO(196, 196, 196, 1), // Color gris claro para el hintText
+                                        ),
+                                      ),
+                                      onSubmitted: (value) {
+                                        _sapellido = value;
+                                      },
+                                    ),
+                                  ),
+                                  SizedBox(height: height * 0.085),
+
+                                  //Boton de siguiente
+                                  Stack(
+                                    children: [
+                                      Container(
+                                        //padding: EdgeInsets.all(20),
+                                        margin: const EdgeInsets.all(20),
+                                        decoration: BoxDecoration(
+                                        // ignore: prefer_const_literals_to_create_immutables
+                                          boxShadow: [
+                                            const BoxShadow(
+                                              color: Colors.black12,
+                                              offset: Offset(0.0, 10.0),
+                                              blurRadius: 5.0
+                                            ),
+                                          ],
+                                          borderRadius:
+                                          BorderRadius.circular(50),
+                                          color: Colors.white,
+                                        ),
+                                        height: height * 0.08,
+                                        width: width * 0.5,
+                                      ),
+
+                                      //Icono
+                                      Positioned(
+                                        left: width*.11,
+                                        top: height*.04,
+                                        child: SizedBox(
+                                          width: width * 0.06,
+                                          child: SvgPicture.asset(
+                                              "assets/svg/foward.svg",
+                                              fit: BoxFit.scaleDown
+                                          ),
+                                        ),
+                                      ),
+
+                                      //Texto
+                                      Positioned(
+                                        left: width*.0,
+                                        top: height*.015,
+                                        child: Container(
+                                          //color: Colors.red,
+                                          height: height * 0.09,
+                                          width: width * 0.7,
+                                          child: MaterialButton(
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                              BorderRadius.circular(50),
+                                            ),
+                                            elevation: 0,
+
+                                            onPressed: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      Home(items: items),
+                                                ),
+                                              );
+                                            },
+
+                                            color: Colors.transparent,
+                                            child: const Text(
+                                              'Siguiente',
+                                              style: TextStyle(
+                                                fontSize: 23,
+                                                fontWeight: FontWeight.w400,
+                                                color: Color.fromRGBO(121, 124, 147, 1),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+
+                                    ],
+                                  ),
+
                                 ],
                               ),
                             ),
-                            SizedBox(height: height * 0.085),
-                            SizedBox(
-                              height: height * 0.6,
-                              width: width * 0.85,
-                              child: Container(
-                                clipBehavior: Clip.antiAliasWithSaveLayer,
-                                decoration: BoxDecoration(
-                                    // ignore: prefer_const_literals_to_create_immutables
-                                    boxShadow: [
-                                      const BoxShadow(
-                                          color: Colors.black26,
-                                          offset: Offset(0.0, 10.0),
-                                          blurRadius: 5.0),
-                                    ],
-                                    borderRadius: BorderRadius.circular(15),
-                                    color: Colors.white),
-                                child: Column(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 20, vertical: 16),
-                                      child: TextField(
-                                        // enableInteractiveSelection: false,
-                                        decoration: InputDecoration(
-                                          enabledBorder:
-                                              const UnderlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                      width: 1,
-                                                      color: Color.fromARGB(
-                                                          255, 223, 220, 220))),
-                                          hintText: "No. de cédula",
-                                          suffixIcon: const Icon(Icons.people),
-                                          hintStyle: TextStyle(
-                                            color: Colors.grey[
-                                                400], // Color gris claro para el hintText
-                                          ),
-                                        ),
-                                        onSubmitted: (value) {
-                                          _cedula = value;
-                                        },
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 20, vertical: 16),
-                                      child: TextField(
-                                        // enableInteractiveSelection: false,
-                                        decoration: InputDecoration(
-                                          enabledBorder:
-                                              const UnderlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                      width: 1,
-                                                      color: Color.fromARGB(
-                                                          255, 223, 220, 220))),
-                                          hintText: "Nombre(s)",
-                                          hintStyle: TextStyle(
-                                            color: Colors.grey[
-                                                400], // Color gris claro para el hintText
-                                          ),
-                                        ),
-                                        onSubmitted: (value) {
-                                          _nombre = value;
-                                        },
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 20, vertical: 16),
-                                      child: TextField(
-                                        // enableInteractiveSelection: false,
-                                        decoration: InputDecoration(
-                                          enabledBorder:
-                                              const UnderlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                      width: 1,
-                                                      color: Color.fromARGB(
-                                                          255, 223, 220, 220))),
-                                          hintText: "Primer apellido",
-                                          hintStyle: TextStyle(
-                                            color: Colors.grey[
-                                                400], // Color gris claro para el hintText
-                                          ),
-                                        ),
-                                        onSubmitted: (value) {
-                                          _papellido = value;
-                                        },
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 20, vertical: 16),
-                                      child: TextField(
-                                        // enableInteractiveSelection: false,
-                                        decoration: InputDecoration(
-                                          enabledBorder:
-                                              const UnderlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                      width: 1,
-                                                      color: Color.fromARGB(
-                                                          255, 223, 220, 220))),
-                                          hintText: "Segundo apellido",
-                                          hintStyle: TextStyle(
-                                            color: Colors.grey[
-                                                400], // Color gris claro para el hintText
-                                          ),
-                                        ),
-                                        onSubmitted: (value) {
-                                          _sapellido = value;
-                                        },
-                                      ),
-                                    ),
-                                    SizedBox(height: height * 0.095),
-                                    Stack(
-                                      children: [
-                                        SizedBox(
-                                          height: height * 0.08,
-                                          width: width * 0.5,
-                                          child: Container(
-                                            clipBehavior:
-                                                Clip.antiAliasWithSaveLayer,
-                                            decoration: BoxDecoration(
-                                                // ignore: prefer_const_literals_to_create_immutables
-                                                boxShadow: [
-                                                  const BoxShadow(
-                                                      color: Colors.black12,
-                                                      offset: Offset(0.0, 10.0),
-                                                      blurRadius: 5.0),
-                                                ],
-                                                borderRadius:
-                                                    BorderRadius.circular(50),
-                                                color: Colors.white),
-                                          ),
-                                        ),
-                                        SizedBox(
-                                            height: height * 0.08,
-                                            width: width * 0.025,
-                                            child: const Icon(
-                                              Icons.keyboard_arrow_right,
-                                              size: 50.0,
-                                              color: Color(0xFF797C93),
-                                            )),
-                                        SizedBox(
-                                            height: height * 0.08,
-                                            width: width * 0.5,
-                                            child: MaterialButton(
-                                              shape: RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          50)),
-                                              elevation: 0,
-                                              onPressed: () {
-                                                Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        Home(items: items),
-                                                  ),
-                                                );
-                                              },
-                                              color: Colors.transparent,
-                                              child: const Align(
-                                                alignment:
-                                                    FractionalOffset(0.7, 0.5),
-                                                child: Text(
-                                                  'Siguiente',
-                                                  style: TextStyle(
-                                                      fontSize: 20,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      color: Color(0xFF797C93)),
-                                                ),
-                                                //colorBrightness: Brightness.dark,
-                                              ),
-                                            )),
-                                      ],
+                          ),
+
+                          Center(
+                            child: Padding(
+                              padding: EdgeInsets.fromLTRB(0,height*.02,0,0),
+                              child: const Text(
+                                "Regístrate",
+                                style: TextStyle(
+                                  fontSize: 40.0,
+                                  fontWeight: FontWeight.w700,
+                                  color: Color.fromRGBO(64, 64, 66, 1),
+                                  shadows: [
+                                    Shadow(
+                                      color: Color.fromARGB(255, 170, 170, 170), // Color del sombreado
+                                      offset: Offset(2, 4), // Desplazamiento del sombreado
+                                      blurRadius: 10.0, // Radio de difuminado del sombreado
                                     ),
                                   ],
                                 ),
                               ),
                             ),
-                          ],
-                        ),
-                      )
-                    ]),
-                  )),
+                          ),
+
+
+                        ],
+                      ),
+                    ),
+
+
+
+                  ],
+                  ),
+                ),
+              ),
+
+              //Triangulo morado
               Positioned(
                 top: height * .8,
                 right: width * .04,
@@ -291,8 +341,13 @@ class _RegistroState extends State<Registro> {
                   ),
                 ),
               ),
+
             ],
-          )
+          ),
+
+
+
+
         ],
       ),
     );

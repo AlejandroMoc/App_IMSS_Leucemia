@@ -1,5 +1,7 @@
 # Prueba de conexión de pantallas
-## co_003b y co_004b
+## co-001b, co-005-pantalla_bienvenida, co_005b-pantalla_preregistro, 
+## co_003b, co_004b, seleccion_actividad, lista_preguntas,
+## A01736345
 ## A01736353
 
 A new Flutter project.

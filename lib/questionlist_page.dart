@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart' as rive;
-// import 'package:flutter_svg/flutter_svg.dart';
-import 'package:glass_kit/glass_kit.dart';
 
 import 'back.dart';
 import 'main.dart';
@@ -196,7 +194,7 @@ class _QuestionListPageState extends State<QuestionListPage> {
                         ),
                       ),
 
-                      //Generar subtemas
+                      //Generar preguntas con sus estados
                       Container(
                         //color: Colors.red,
                         height: height * 0.97,
@@ -220,6 +218,9 @@ class _QuestionListPageState extends State<QuestionListPage> {
                                   text: (items[index].questionsold),
                                   //state: 0,
                                   state: (items[index].states[index]),
+                                  //Aqui se debe pasar la informacion sobre la pregunta
+                                  //por el momento se pasa todo items
+                                  items: items,
                                 ),
                               ],
                             );

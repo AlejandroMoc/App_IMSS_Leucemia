@@ -35,7 +35,8 @@ class _HomeState extends State<Home> {
         child: Stack(
           children: [
             //Fondo con animacion
-            const rive.RiveAnimation.asset('assets/riv/animated_bg.riv',
+            const rive.RiveAnimation.asset(
+                'assets/riv/animated_bg.riv',
                 fit: BoxFit.cover),
 
             //Glasmorphism
@@ -91,7 +92,7 @@ class _HomeState extends State<Home> {
                           borderRadius:
                               const BorderRadius.all(Radius.circular(20)),
                           border: Border.all(
-                            color: const Color.fromARGB(255, 121, 124, 147),
+                            color: Colors.transparent,
                             width: 0,
                           ),
                         ),
@@ -290,10 +291,12 @@ class _HomeState extends State<Home> {
                                       Container(
                                         width: width * .1,
                                         height: height * .1,
-                                        margin:
-                                            const EdgeInsets.only(right: 10),
+                                        margin: EdgeInsets.only(right: width*0.03),
                                         child: Image.asset(
-                                            'assets/images/google.png'),
+                                            'assets/images/google.png'
+                                        ),
+
+
                                       ),
                                     ],
                                   ),
@@ -309,7 +312,7 @@ class _HomeState extends State<Home> {
                     Align(
                       alignment: Alignment.center,
                       child: Padding(
-                        padding: EdgeInsets.only(top: height * .7, left: 230),
+                        padding: EdgeInsets.only(top: height * .7, left: width*.6),
                         child: Container(
                           //color: Colors.red,
                           width: width * .32,
@@ -336,6 +339,8 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
+
+
                   ],
                 ),
               ),

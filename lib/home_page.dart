@@ -117,6 +117,7 @@ class _HomeState extends State<Home> {
                               ),
                             ),
                           ),
+
                           //Triangulo morado
                           Positioned(
                             top: height*.02,

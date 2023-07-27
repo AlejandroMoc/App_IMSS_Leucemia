@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    width="100%"
    height="100%"
@@ -7,30 +6,13 @@
    xml:space="preserve"
    style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
    id="svg6"
-   sodipodi:docname="home.svg"
+   sodipodi:docname="Home.svg"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg"><defs
-   id="defs10"><linearGradient
-     inkscape:collect="always"
-     id="linearGradient882"><stop
-       style="stop-color:#000000;stop-opacity:1;"
-       offset="0"
-       id="stop878" /><stop
-       style="stop-color:#000000;stop-opacity:0;"
-       offset="1"
-       id="stop880" /></linearGradient><linearGradient
-     inkscape:collect="always"
-     xlink:href="#linearGradient882"
-     id="linearGradient884"
-     x1="2.974"
-     y1="29.8135"
-     x2="56.028"
-     y2="29.8135"
-     gradientUnits="userSpaceOnUse" /></defs><sodipodi:namedview
+   id="defs10" /><sodipodi:namedview
    id="namedview8"
    pagecolor="#ffffff"
    bordercolor="#000000"
@@ -40,9 +22,9 @@
    inkscape:pagecheckerboard="0"
    inkscape:deskcolor="#d1d1d1"
    showgrid="false"
-   inkscape:zoom="8.9935144"
-   inkscape:cx="14.065692"
-   inkscape:cy="30.744377"
+   inkscape:zoom="12.71875"
+   inkscape:cx="25.945946"
+   inkscape:cy="32.039312"
    inkscape:window-width="1920"
    inkscape:window-height="1001"
    inkscape:window-x="-9"
@@ -52,10 +34,10 @@
     <g
    transform="matrix(1.10316,0,0,1.10316,-0.54436,-0.889222)"
    id="g4"
-   style="fill-opacity:1;fill:#ffffff;stroke:none;stroke-opacity:1">
+   style="fill:#ffffff;fill-opacity:1">
         <path
    d="M24.336,51.693L24.336,35.697L34.54,35.697L34.54,51.693L47.713,51.693L47.713,30.871L56.028,30.871L30.154,7.934L2.974,30.872L11.755,30.871L11.755,51.693L24.336,51.693Z"
-   style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-opacity:1"
+   style="fill:#ffffff;fill-opacity:1"
    id="path2" />
     </g>
 </svg>

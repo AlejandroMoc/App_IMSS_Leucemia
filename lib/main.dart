@@ -190,8 +190,7 @@ void main() {
   final String titlesubthemes; //"Subtemas"
 
   List allunits; //[Unidad 1, Unidad 2, Unidad 3]
-  List
-      unidad1; //unidad1 = ["Unidad 1: Lorem Ipsum", "Esta es la descripción de la unidad", subtema11, subtema12, subtema13],
+  List unidad1; //unidad1 = ["Unidad 1: Lorem Ipsum", "Esta es la descripción de la unidad", subtema11, subtema12, subtema13],
   List unidad2;
   List unidad3;
   List unidad4;
@@ -291,244 +290,64 @@ void main() {
         'Subtemas',
 
         //Preguntas
-        pregunta111 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta112 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta121 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta122 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta131 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta132 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
+        pregunta111 = ["Pregunta ", "¿Qué porcentaje de los cánceres infantiles corresponden a la leucemia?", 0, "30%", "20%", "40%", "50%"],
+        pregunta112 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta121 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta122 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta131 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta132 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
 
-        pregunta211 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta212 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta221 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta222 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta231 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta232 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
+        pregunta211 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta212 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta221 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta222 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta231 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta232 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
 
-        pregunta311 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta312 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta321 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta322 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta331 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta332 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
+        pregunta311 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta312 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta321 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta322 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta331 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta332 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
 
-        pregunta411 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta412 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta421 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta422 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta431 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta432 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
+        pregunta411 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta412 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta421 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta422 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta431 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta432 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
 
-        pregunta511 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta512 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta521 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta522 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta531 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
-        pregunta532 = [
-          "¿Esto es una pregunta?",
-          0,
-          "Sí, es una pregunta",
-          "No, no es una pregunta"
-        ],
+        pregunta511 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta512 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta521 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta522 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta531 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
+        pregunta532 = ["Pregunta ", "¿Esto es una pregunta?", 0, "Sí, es una pregunta", "No, no es una pregunta"],
 
         //Subtemas
-        subtema11 = [pregunta111, pregunta112],
-        subtema12 = [pregunta121, pregunta122],
-        subtema13 = [pregunta131, pregunta132],
-        subtema21 = [pregunta211, pregunta212],
-        subtema22 = [pregunta221, pregunta222],
-        subtema23 = [pregunta231, pregunta232],
-        subtema31 = [pregunta311, pregunta312],
-        subtema32 = [pregunta321, pregunta322],
-        subtema33 = [pregunta331, pregunta332],
-        subtema41 = [pregunta411, pregunta412],
-        subtema42 = [pregunta421, pregunta422],
-        subtema43 = [pregunta431, pregunta432],
-        subtema51 = [pregunta511, pregunta512],
-        subtema52 = [pregunta521, pregunta522],
-        subtema53 = [pregunta531, pregunta532],
+        subtema11=[pregunta111, pregunta112],
+        subtema12=[pregunta121, pregunta122],
+        subtema13=[pregunta131, pregunta132],
+        subtema21=[pregunta211, pregunta212],
+        subtema22=[pregunta221, pregunta222],
+        subtema23=[pregunta231, pregunta232],
+        subtema31=[pregunta311, pregunta312],
+        subtema32=[pregunta321, pregunta322],
+        subtema33=[pregunta331, pregunta332],
+        subtema41=[pregunta411, pregunta412],
+        subtema42=[pregunta421, pregunta422],
+        subtema43=[pregunta431, pregunta432],
+        subtema51=[pregunta511, pregunta512],
+        subtema52=[pregunta521, pregunta522],
+        subtema53=[pregunta531, pregunta532],
 
         //Unidades
-        unidad1 = [
-          "Unidad 1: Lorem Ipsum",
-          "Esta es la descripción de la unidad",
-          subtema11,
-          subtema12,
-          subtema13
-        ],
-        unidad2 = [
-          "Unidad 2: Lorem Ipsum",
-          "Esta es la descripción de la unidad",
-          subtema21,
-          subtema22,
-          subtema23
-        ],
-        unidad3 = [
-          "Unidad 3: Lorem Ipsum",
-          "Esta es la descripción de la unidad",
-          subtema31,
-          subtema32,
-          subtema33
-        ],
-        unidad4 = [
-          "Unidad 4: Lorem Ipsum",
-          "Esta es la descripción de la unidad",
-          subtema41,
-          subtema42,
-          subtema43
-        ],
-        unidad5 = [
-          "Unidad 5: Lorem Ipsum",
-          "Esta es la descripción de la unidad",
-          subtema51,
-          subtema52,
-          subtema53
-        ],
+        unidad1 = ["Unidad 1: Lorem Ipsum", "Esta es la descripción de la unidad", subtema11, subtema12, subtema13],
+        unidad2 = ["Unidad 2: Lorem Ipsum", "Esta es la descripción de la unidad", subtema21, subtema22, subtema23],
+        unidad3 = ["Unidad 3: Lorem Ipsum", "Esta es la descripción de la unidad", subtema31, subtema32, subtema33],
+        unidad4 = ["Unidad 4: Lorem Ipsum", "Esta es la descripción de la unidad", subtema41, subtema42, subtema43],
+        unidad5 = ["Unidad 5: Lorem Ipsum", "Esta es la descripción de la unidad", subtema51, subtema52, subtema53],
         allunits = [unidad1, unidad2, unidad3, unidad4, unidad5],
 
         //Variables antiguas
@@ -566,7 +385,7 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: "home",
         routes: {
-          "home": (_) => GlassmorphicSample(items: items, key: key),
+          "home": (_) => WelcomePage(items: items, key: key),
         });
   }
 }

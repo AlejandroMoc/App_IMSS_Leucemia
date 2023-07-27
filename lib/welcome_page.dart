@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:glassmorphism/glassmorphism.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:glass_kit/glass_kit.dart';
 import 'package:rive/rive.dart' as rive;
 import 'dart:math' as math;
 import 'main.dart';
 import 'preregistration_page.dart';
 
-class GlassmorphicSample extends StatefulWidget {
-  const GlassmorphicSample({super.key, required this.items});
+class WelcomePage extends StatefulWidget {
+  const WelcomePage({super.key, required this.items});
   final List<Todo> items;
   @override
-  State<GlassmorphicSample> createState() => GlassmorphicSampleState(items);
+  State<WelcomePage> createState() => WelcomePageState(items);
 }
 
-class GlassmorphicSampleState extends State<GlassmorphicSample> {
+class WelcomePageState extends State<WelcomePage> {
   final List<Todo> items;
-  GlassmorphicSampleState(this.items);
+  WelcomePageState(this.items);
 
   @override
   Widget build(BuildContext context) {
@@ -26,113 +27,169 @@ class GlassmorphicSampleState extends State<GlassmorphicSample> {
         width: double.infinity,
         child: Stack(
           children: [
-            SizedBox(
-                height: height,
-                width: width,
-                child: const rive.RiveAnimation.asset(
-                  'assets/riv/animated_bg.riv',
-                  fit: BoxFit.cover,
-                )),
+
+            //Fondo animado
+            const rive.RiveAnimation.asset('assets/riv/animated_bg.riv', fit: BoxFit.cover),
+
+            //Glasmorphism con glass_kit
+            // Requiere un borderColor manual (bug de la librería)
+            GlassContainer.frostedGlass(
+              height: height,
+              width: width,
+              borderColor: Colors.transparent,
+              borderWidth: 0,
+              blur: 15,
+              // elevation: 3.0,
+              // isFrostedGlass: false,
+              // shadowColor: Colors.black.withOpacity(0.20),
+              // frostedOpacity: 0.82,
+            ),
+
             SafeArea(
               child: Center(
-                child: GlassmorphicContainer(
+                child: Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
-                  borderRadius: 20,
-                  blur: 20,
+
                   alignment: Alignment.center,
-                  border: 2,
-                  linearGradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [
-                      Color(0xFFD9D7E4).withOpacity(0.1),
-                      Color(0xFFFFFFFF).withOpacity(0.05),
-                    ],
-                    stops: [
-                      0.1,
-                      1,
-                    ],
-                  ),
-                  borderGradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [
-                      Color(0xFFD9D7E4).withOpacity(0.5),
-                      Color(0xFFFFFFFF).withOpacity(0.5),
-                    ],
-                  ),
+
                   child: Stack(
                     children: [
-                      Padding(
-                        padding: EdgeInsets.only(top: 500, right: 150),
-                        child: Align(
-                          alignment: Alignment.center,
-                          child: Transform.rotate(
-                            angle: -math.pi / 4.1,
-                            child: Container(
-                              color: Colors.transparent,
-                              // alignment: Alignment.bottomLeft,
-                              height: height * .2,
-                              width: width * .3,
-                              child: const rive.RiveAnimation.asset(
-                                'assets/riv/circulo_amarillo.riv',
-                                // alignment: Alignment.bottomLeft,
-                                fit: BoxFit.contain,
-                              ),
+
+                      //Logo de fondo
+                      Center(
+                        child: SizedBox(
+                          width: width*.6,
+                          child: SizedBox(
+                            width: width,
+                            height: height,
+                            child: SvgPicture.asset(
+                              "assets/svg/logo_central.svg",
                             ),
                           ),
                         ),
                       ),
+
+                      // Center(
+                      //   child: SizedBox(
+                      //   width: 300,
+                      //   height: 300,
+                      //   //Imagen logo
+                      //   child: Image.asset(
+                      //     'assets/images/Logo_central.png'),
+                      //   ),
+                      // ),
+
+                      //Texto de bienvenida
                       Padding(
-                        padding: EdgeInsets.only(top: 550),
+                        padding: EdgeInsets.only(bottom: height*.7),
+                        child: const Align(
+                          alignment: Alignment.center,
+                          //top: height*.1,
+                          child: Text(
+                          '¡Bienvenido!',
+                            style: TextStyle(
+                              shadows: <Shadow>[
+                                Shadow(
+                                  offset: Offset(0,6),
+                                  blurRadius: 3.0,
+                                  color: Color.fromRGBO(0, 0, 0, 0.21),
+                                ),
+                              ],
+                              fontWeight: FontWeight.w700,
+                              fontSize: 55,
+                              color: Color.fromRGBO(64, 64, 66, 1),
+                            ),
+                          ),
+                        ),
+                      ),
+
+
+                      //Circulo amarillo
+                      Padding(
+                        padding: EdgeInsets.only(top: height*.7, left: width*.15),
+                        child: Transform.rotate(
+                          angle: -math.pi / 4.1,
+                          child: Container(
+                            //color: Colors.transparent,
+                            // alignment: Alignment.bottomLeft,
+                            height: height * .2,
+                            width: width * .3,
+                            child: const rive.RiveAnimation.asset(
+                              'assets/riv/circulo_amarillo.riv',
+                              // alignment: Alignment.bottomLeft,
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                        ),
+                      ),
+
+
+                      //Botón de siguiente
+                      Container(
+                        padding: EdgeInsets.only(top: height*.7),
                         child: Align(
                           alignment: Alignment.center,
                           child: Container(
-                            width: 160,
-                            height: 50,
+                            width: width* .6,
+                            height: height*.12,
                             decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
-                                color: Colors.white,
-                                width: 1,
-                              ),
+                              //color: Colors.red,
+                              borderRadius: BorderRadius.circular(50),
+                              // border: Border.all(
+                              //   color: Colors.transparent,
+                              //   width: 0,
+                              // ),
                             ),
                             child: Stack(
                               children: [
-                                SizedBox(
-                                  height: height * 0.08,
-                                  width: width * 0.5,
-                                  child: Container(
-                                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                                    decoration: BoxDecoration(
-                                        // ignore: prefer_const_literals_to_create_immutables
-                                        boxShadow: [
-                                          const BoxShadow(
-                                              color: Colors.black12,
-                                              offset: Offset(0.0, 10.0),
-                                              blurRadius: 5.0),
-                                        ],
-                                        borderRadius: BorderRadius.circular(50),
-                                        color: Colors.white),
+                                Container(
+                                  margin: const EdgeInsets.all(15),
+                                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                                  decoration: BoxDecoration(
+                                    boxShadow: const [
+                                      BoxShadow(
+                                        color: Color.fromRGBO(0, 0, 0, 0.1),
+                                        offset: Offset(0.0, 8.0),
+                                        blurRadius: 5.0),
+                                    ],
+                                    borderRadius: BorderRadius.circular(50),
+                                    color: Colors.white
                                   ),
                                 ),
-                                SizedBox(
-                                    height: height * 0.08,
-                                    width: width * 0.025,
-                                    child: const Icon(
-                                      Icons.arrow_forward,
-                                      size: 40.0,
-                                      color: Color(0xFF797C93),
-                                    )),
-                                SizedBox(
+
+                                //Icono
+                                Positioned(
+                                  left: width*.09,
+                                  top: height*.035,
+                                  child: SizedBox(
+                                    width: width * 0.06,
+                                    // child: const Icon(
+                                    //   Icons.arrow_forward,
+                                    //   size: 40.0,
+                                    //   color: Color(0xFF797C93),
+                                    // )
+                                    child: SvgPicture.asset(
+                                        "assets/svg/foward.svg",
+                                        fit: BoxFit.scaleDown
+                                    ),
+                                  ),
+                                ),
+
+                                //Texto
+                                Positioned(
+                                  left: width*.09,
+                                  top: height*.02,
+                                  child: Container(
+                                  //color: Colors.red,
                                     height: height * 0.08,
                                     width: width * 0.5,
                                     child: MaterialButton(
                                       shape: RoundedRectangleBorder(
                                           borderRadius:
-                                              BorderRadius.circular(50)),
+                                          BorderRadius.circular(50)
+                                      ),
+
                                       elevation: 0,
                                       onPressed: () {
                                         Navigator.push(
@@ -146,34 +203,37 @@ class GlassmorphicSampleState extends State<GlassmorphicSample> {
                                         );
                                       },
                                       color: Colors.transparent,
-                                      child: const Align(
-                                        alignment: FractionalOffset(0.7, 0.5),
-                                        child: Text(
-                                          'Siguiente',
-                                          style: TextStyle(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.w600,
-                                              color: Color(0xFF797C93)),
+                                      child: const Text(
+                                        'Siguiente',
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w400,
+                                          color: Color.fromRGBO(121, 124, 147, 1),
                                         ),
-                                        //colorBrightness: Brightness.dark,
                                       ),
-                                    )),
+                                    )
+                                  ),
+
+                                ),
                               ],
                             ),
                           ),
                         ),
                       ),
+
+
+                      //Triangulo morado
                       Padding(
-                        padding: EdgeInsets.only(top: 610, left: 140),
+                        padding: const EdgeInsets.only(top: 650, left: 170),
                         child: Align(
                           alignment: Alignment.center,
                           child: Transform.rotate(
                             angle: -math.pi / 4.1,
                             child: Container(
-                              color: Colors.transparent,
+                              //color: Colors.transparent,
                               // alignment: Alignment.bottomLeft,
                               height: height * .2,
-                              width: width * .3,
+                              width: width * .22,
                               child: const rive.RiveAnimation.asset(
                                 'assets/riv/triangulo_morado.riv',
                                 // alignment: Alignment.bottomLeft,
@@ -183,28 +243,7 @@ class GlassmorphicSampleState extends State<GlassmorphicSample> {
                           ),
                         ),
                       ),
-                      Center(
-                        child: Container(
-                          width: 300,
-                          height: 300,
-                          child: Image.asset(
-                              'assets/images/Logo_central.png'), //Este logo hay que cambiarlo por el de buena calidad
-                        ),
-                      ),
-                      Center(
-                        child: Padding(
-                          padding: EdgeInsets.only(bottom: 550),
-                          child: Text(
-                            '¡Bienvenido!',
-                            style: TextStyle(
-                              fontSize: 40,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Nunito',
-                              color: Colors.black,
-                            ),
-                          ),
-                        ),
-                      ),
+
                     ],
                   ),
                 ),
