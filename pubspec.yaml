@@ -72,12 +72,10 @@ flutter_launcher_icons:
     generate: true
     image_path: "assets/icons/icon.png"
 
-
 # The following section is specific to Flutter packages.
 flutter:
 
   uses-material-design: true
-
   assets:
     - assets/
     - assets/riv/
