@@ -95,7 +95,7 @@ class _SubthemePageState extends State<SubthemePage> {
                                             color: Color.fromRGBO(0, 0, 0, 0.21),
                                           ),
                                         ],
-                                        fontWeight: FontWeight.w900,
+                                        fontWeight: FontWeight.w700,
                                         fontSize: 40,
                                         color: Color.fromRGBO(64, 64, 66, 1),
                                       ),

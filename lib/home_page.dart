@@ -26,13 +26,12 @@ class _HomeState extends State<Home> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
 
-    double heightfactor = 0.04;
-
-    return Scaffold(
-      body: Container(
-
-        //Stack entre fondo y elementos
-        child:Stack(
+    //WillPopScope sirve para que no se pueda regresar
+    //a las pantallas anteriores
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+        body: Stack(
           children: [
 
             //Fondo animado
@@ -68,7 +67,7 @@ class _HomeState extends State<Home> {
                         alignment: Alignment.bottomCenter,
                         children:[
                           //Titulo
-                          Container(
+                          SizedBox(
                             //color: Colors.blue,
                             height: height *.18,
                             child: ListView.builder(
@@ -76,6 +75,7 @@ class _HomeState extends State<Home> {
                               itemCount: 1,
                               prototypeItem:
                               ListTile(
+                                //AQUI SE PUEDE ENVIAR A ALGUNA PANTALLA DE ESTADISTICAS
                                 //onTap: (){},
                                 contentPadding: EdgeInsets.fromLTRB(0,height*0.03,0,height*0.03),
                               ),
@@ -95,7 +95,7 @@ class _HomeState extends State<Home> {
                                             color: Color.fromRGBO(0, 0, 0, 0.21),
                                           ),
                                         ],
-                                        fontWeight: FontWeight.w900,
+                                        fontWeight: FontWeight.w700,
                                         fontSize: 40,
                                         color: Color.fromRGBO(64, 64, 66, 1),
                                       ),
@@ -108,7 +108,7 @@ class _HomeState extends State<Home> {
                           Positioned(
                             top: height*.08,
                             left: width*.2,
-                            child: Container(
+                            child: SizedBox(
                               height: height * .09,
                               width: width * .2,
                               child: const rive.RiveAnimation.asset(
@@ -122,7 +122,7 @@ class _HomeState extends State<Home> {
                           Positioned(
                             top: height*.02,
                             right: width*.2,
-                            child: Container(
+                            child: SizedBox(
                               height: height * .08,
                               width: width * .3,
                               child: const rive.RiveAnimation.asset(

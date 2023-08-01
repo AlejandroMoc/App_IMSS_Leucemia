@@ -1,5 +1,3 @@
-import 'package:build_pantallas/actselect_page.dart';
-import 'package:build_pantallas/subtheme_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'back.dart';
@@ -24,8 +22,6 @@ class _AnswerPageState extends State<AnswerPage> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-
-    double heightfactor = 0.04;
 
     return Scaffold(
       body: Stack(
@@ -79,7 +75,7 @@ class _AnswerPageState extends State<AnswerPage> {
                                             color: Color.fromRGBO(0, 0, 0, 0.21),
                                           ),
                                         ],
-                                        fontWeight: FontWeight.w900,
+                                        fontWeight: FontWeight.w700,
                                         fontSize: 40,
                                         color: Color.fromRGBO(64, 64, 66, 1),
                                       ),

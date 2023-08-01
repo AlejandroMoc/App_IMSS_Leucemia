@@ -1,5 +1,11 @@
 name: build_pantallas
-description: A new Flutter project.
+description: Muestra de las pantallas unidas.
+  
+  Para actualizar el ícono de la app se deben ejecutar los siguientes comandos
+  antes de cada compilación en Android.
+
+  #flutter pub get
+  #flutter pub run flutter_launcher_icons
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -45,6 +51,26 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^2.0.0
+  flutter_launcher_icons: "^0.13.1"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/icon.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/icons/icon.png"
+    #background_color: "#hexcode"
+    #theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "assets/icons/icon.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/icons/icon.png"
+
 
 # The following section is specific to Flutter packages.
 flutter:

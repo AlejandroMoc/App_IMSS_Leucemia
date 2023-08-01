@@ -28,7 +28,6 @@ class _QuestionListPageState extends State<QuestionListPage> {
     double heightfactor = 0.04;
 
     //String titleunit = "Unidad 1: Lorem Ipsum";
-    String titlesubtheme = "Subtema 1";
     int answered = 2;
     int to_answer = 4;
 
@@ -90,7 +89,7 @@ class _QuestionListPageState extends State<QuestionListPage> {
                                                     0, 0, 0, 0.21),
                                               ),
                                             ],
-                                            fontWeight: FontWeight.w900,
+                                            fontWeight: FontWeight.w700,
                                             fontSize: 40,
                                             color:
                                                 Color.fromRGBO(64, 64, 66, 1),
@@ -157,8 +156,8 @@ class _QuestionListPageState extends State<QuestionListPage> {
                               items[index].titlesubtheme,
                               textAlign: TextAlign.center,
                               style: const TextStyle(
-                                fontWeight: FontWeight.w100,
-                                fontSize: 23,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 24,
                                 color: Color.fromARGB(255, 121, 124, 147),
                               ),
                             );

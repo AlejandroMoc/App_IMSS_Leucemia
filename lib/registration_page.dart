@@ -217,7 +217,7 @@ class _RegistroState extends State<Registro> {
                                   SizedBox(height: height * 0.085),
 
                                   //Boton de siguiente
-                                  Stack(
+                                  /*Stack(
                                     children: [
                                       Container(
                                         //padding: EdgeInsets.all(20),
@@ -291,8 +291,83 @@ class _RegistroState extends State<Registro> {
                                       ),
 
                                     ],
-                                  ),
+                                  ),*/
 
+                                  //Nuevo botón de siguiente
+                                  Positioned(
+                                    top: height*.8,
+                                    left: width*.24,
+                                    child: Container(
+                                      //color: Colors.red,
+                                      width: width*.52,
+                                      height: height*.2*.75,
+                                      padding: EdgeInsets.only(bottom: height*.07),
+                                      child: MaterialButton(
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                            BorderRadius.circular(50)
+                                        ),
+
+                                        elevation: 0,
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) => Home(
+                                                items: items,
+                                                //builder: (context) => Container(),
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                        padding: const EdgeInsets.all(0),
+
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            boxShadow: const [
+                                              BoxShadow(
+                                                  color: Color.fromRGBO(0, 0, 0, 0.1),
+                                                  offset: Offset(0.0, 8.0),
+                                                  blurRadius: 5.0),
+                                            ],
+                                            borderRadius: BorderRadius.circular(50),
+                                            color: Colors.white,
+                                          ),
+
+                                          child: Stack(
+                                            children: [
+                                              //Icono
+                                              Positioned(
+                                                left: width*.08,
+                                                top: height*.015,
+                                                child: SizedBox(
+                                                  width: width * 0.06,
+                                                  child: SvgPicture.asset(
+                                                      "assets/svg/foward.svg",
+                                                      fit: BoxFit.scaleDown
+                                                  ),
+                                                ),
+                                              ),
+
+                                              //Texto
+                                              Positioned(
+                                                left: width*.2,
+                                                top: height*.02,
+                                                child: const Text(
+                                                  'Siguiente',
+                                                  style: TextStyle(
+                                                    fontSize: 20,
+                                                    fontWeight: FontWeight.w400,
+                                                    color: Color.fromRGBO(121, 124, 147, 1),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),

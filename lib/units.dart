@@ -53,7 +53,7 @@ class units extends StatelessWidget {
               textAlign: TextAlign.center,
               style: const TextStyle(
                 //height: 1.2,
-                  fontWeight: FontWeight.w100,
+                  fontWeight: FontWeight.w300,
                   fontSize: 24,
                   color: Color.fromARGB(255, 121, 124, 147)
               ),

@@ -1,19 +1,17 @@
 # Prueba de conexión de pantallas
-## co-001b, co-005-pantalla_bienvenida, co_005b-pantalla_preregistro, 
-## co_003b, co_004b, seleccion_actividad, lista_preguntas,
-## A01736345
-## A01736353
 
-A new Flutter project.
+## Pantallas unidas
+Esta prueba tiene como objetivo el unir las siguientes pantallas:
+co-001b, co-005-pantalla_bienvenida, co_005b-pantalla_preregistro, co_003b, co_004b, seleccion_actividad, lista_preguntas,}
 
-## Getting Started
+## Participantes de la unión de pantallas
 
-This project is a starting point for a Flutter application.
+A01736345 - Luis Ángel Cruz García
+A01736353 - Alejandro Daniel Moctezuma Cruz
 
-A few resources to get you started if this is your first Flutter project:
+## Comenzando
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Esta aplicación debe compilarse antes de poderse ejecutar.
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,

@@ -51,8 +51,8 @@ class score extends StatelessWidget {
                 "$answered / $to_answer",
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                  fontWeight: FontWeight.w100,
-                  fontSize: 25,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 24,
                   color: Color.fromARGB(255,121, 124, 147),
                 ),
               ),

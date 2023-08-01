@@ -26,10 +26,8 @@ class _HomeState extends State<Home> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
 
-    double heightfactor = 0.04;
-
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         height: double.infinity,
         width: double.infinity,
         child: Stack(
@@ -117,7 +115,7 @@ class _HomeState extends State<Home> {
                                     ),
                                   ],
                                   fontWeight: FontWeight.w700,
-                                  fontSize: 36,
+                                  fontSize: 40,
                                   color: Color.fromRGBO(64, 64, 66, 1),
                                 ),
                               ),
@@ -271,23 +269,35 @@ class _HomeState extends State<Home> {
                                       width: width * .01,
                                       padding: EdgeInsets.zero,
                                     ),
-                                    Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: RichText(
-                                        text: const TextSpan(
+                                    SizedBox(
+                                      width: width*.45,
+                                      child: const Align(
+                                        alignment: Alignment.centerLeft,
+                                        /*child: RichText(
+                                          textAlign: TextAlign.justify,
+                                          text: const TextSpan(
+                                            style: TextStyle(
+                                              fontSize: 24,
+                                              fontWeight: FontWeight.w300,
+                                              color: Color.fromRGBO(
+                                                  121, 124, 147, 1),
+                                            ),
+                                            children: [
+                                              TextSpan(text: 'Continuar con Google'),
+                                            ],
+                                          ),
+                                        ),*/
+                                        child: Text(
+                                          'Continuar con Google',
                                           style: TextStyle(
                                             fontSize: 24,
                                             fontWeight: FontWeight.w300,
-                                            color: Color.fromRGBO(
-                                                121, 124, 147, 1),
+                                            color: Color.fromRGBO(121, 124, 147, 1),
                                           ),
-                                          children: [
-                                            TextSpan(text: 'Continuar con\n'),
-                                            TextSpan(text: 'Google'),
-                                          ],
                                         ),
                                       ),
                                     ),
+
                                     Container(
                                       width: width * .1,
                                       height: height * .1,
@@ -295,8 +305,6 @@ class _HomeState extends State<Home> {
                                       child: Image.asset(
                                           'assets/images/google.png'
                                       ),
-
-
                                     ),
                                   ],
                                 ),

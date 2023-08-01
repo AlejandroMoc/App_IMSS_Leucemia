@@ -43,7 +43,7 @@ class stats extends StatelessWidget {
               text,
               textAlign: TextAlign.center,
               style: const TextStyle(
-                fontWeight: FontWeight.w100,
+                fontWeight: FontWeight.w300,
                 fontSize: 24,
                 color: Color.fromARGB(255, 121, 124, 147)
               ),
