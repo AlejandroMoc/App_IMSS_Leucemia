@@ -3,7 +3,6 @@ O365GRP-Proyecto SS-IMSS
 
 Aplicación para la identificación y tratamiento de niños con leucemia.
 
-
 ## Objetivo
 
 Este proyecto tiene como finalidad el desarrollo de una aplicación la cual ayude a los niños con Leucemia así como a los médicos. 
@@ -31,6 +30,15 @@ La aplicación actualmente desarrollada debe contener información lo más actua
 - [**A01736353**](mailto:a01736353@tec.mx) Alejandro Daniel Moctezuma Cruz
 
 
-## Licencia
+# Prueba de conexión de pantallas
 
-Este proyecto cuenta con la licencia __, la cual consiste en ___.
+## Pantallas unidas
+Esta prueba tiene como objetivo el unir las siguientes pantallas, mismas que se encuentran en sus respectivas ramas:
+co-001b, co-005-pantalla_bienvenida, co_005b-pantalla_preregistro, co_003b, co_004b, seleccion_actividad y lista_preguntas.
+
+Esta es únicamente una prueba para la interacción de las interfaces, y no posee algún tipo de conexión a una base de datos.
+
+## Participantes de la unión de pantallas
+
+- [**A01736345**](mailto:A01736345@tec.mx) Luis Ángel Cruz García
+- [**A01736353**](mailto:a01736353@tec.mx) Alejandro Daniel Moctezuma Cruz
